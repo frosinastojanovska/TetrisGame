@@ -15,8 +15,10 @@ namespace TetrisGame
         public Tetris()
         {
             InitializeComponent();
+            DoubleBuffered = true;
             MenuPanel1.Visible = true;
             AboutPanel2.Visible = false;
+            GamePanel3.Visible = false;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -34,6 +36,12 @@ namespace TetrisGame
         {
             MenuPanel1.Visible = false;
             AboutPanel2.Visible = true;
+        }
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            MenuPanel1.Visible = false;
+            GamePanel3.Visible = true;
         }
     }
 
