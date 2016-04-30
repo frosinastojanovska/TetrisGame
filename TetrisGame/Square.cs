@@ -9,8 +9,8 @@ namespace TetrisGame
 {
     public class Square
     {
-        public static float width = 20;
-        public static float height = 20;
+        public readonly float width = 20;
+        public readonly float height = 20;
         public float X { get; set; }
         public float Y { get; set; }
         public Color color { get; set; }
