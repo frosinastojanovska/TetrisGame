@@ -38,7 +38,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.GamePanel3 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lbLines = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -54,7 +53,6 @@
             this.AboutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.GamePanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -157,7 +155,6 @@
             // 
             // GamePanel3
             // 
-            this.GamePanel3.Controls.Add(this.dataGridView1);
             this.GamePanel3.Controls.Add(this.lbLines);
             this.GamePanel3.Controls.Add(this.button1);
             this.GamePanel3.Controls.Add(this.groupBox3);
@@ -170,17 +167,6 @@
             this.GamePanel3.Name = "GamePanel3";
             this.GamePanel3.Size = new System.Drawing.Size(429, 435);
             this.GamePanel3.TabIndex = 0;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.SeaShell;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 16);
-            this.dataGridView1.MaximumSize = new System.Drawing.Size(200, 400);
-            this.dataGridView1.MinimumSize = new System.Drawing.Size(200, 400);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(200, 400);
-            this.dataGridView1.TabIndex = 11;
             // 
             // lbLines
             // 
@@ -331,7 +317,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.GamePanel3.ResumeLayout(false);
             this.GamePanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -359,7 +344,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lbScore;
         private System.Windows.Forms.Label lbLines;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.PictureBox pictureBox2;
     }

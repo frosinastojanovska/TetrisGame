@@ -10,36 +10,28 @@ namespace TetrisGame
 {
     public class TetrisBox : UserControl
     {
-        public int Rows = 20;
-        public int Columns = 10;
-        public int SquareSize = 20;
+        public Board board;
         public Timer timer;
         public int lines;
         public long score;
         public bool playing;
         public bool paused;
-        public Tetrimino currentTetrimino;
-        public Tetrimino nextTetrimino;
-        public List<Square[]> immovableSquares;
         
-        public TetrisBox(Point p)
+        
+        public TetrisBox(Point p, int width, int height)
         {
             DoubleBuffered = true;
             this.Location = p;
-            this.Width = (this.Columns * this.SquareSize);
-            this.Height = (this.Rows * this.SquareSize);
-            immovableSquares = new List<Square[]>();
-            for (int i = 0; i < Rows; i++)
-            {
-                Square[] col = new Square[Columns];
-                immovableSquares.Add(col);
-            }
+            this.Width = width;
+            this.Height = height;
+            board = new Board(20, 10, 20, Color.SeaShell, this.Location.X, this.Location.Y);
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            e.Graphics.FillRectangle(new SolidBrush(Color.SeaShell), this.Location.X, this.Location.Y, this.Width, this.Height);
+            e.Graphics.FillRectangle(new SolidBrush(board.backgroundColor), this.Location.X, this.Location.Y, this.Location.X * 10, this.Location.Y * 20);
+            board.Draw(new SolidBrush(board.backgroundColor), e.Graphics);
         }
     }
 }

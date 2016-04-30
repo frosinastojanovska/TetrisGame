@@ -19,7 +19,7 @@ namespace TetrisGame
             MenuPanel1.Visible = true;
             AboutPanel2.Visible = false;
             GamePanel3.Visible = false;
-            TetrisBox box = new TetrisBox(GamePanel3.Location);
+            TetrisBox box = new TetrisBox(GamePanel3.Location, GamePanel3.Width, GamePanel3.Width);
             GamePanel3.Controls.Add(box);
         }
 
