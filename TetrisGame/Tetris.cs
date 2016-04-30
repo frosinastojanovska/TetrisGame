@@ -19,6 +19,8 @@ namespace TetrisGame
             MenuPanel1.Visible = true;
             AboutPanel2.Visible = false;
             GamePanel3.Visible = false;
+            TetrisBox box = new TetrisBox(GamePanel3.Location);
+            GamePanel3.Controls.Add(box);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
