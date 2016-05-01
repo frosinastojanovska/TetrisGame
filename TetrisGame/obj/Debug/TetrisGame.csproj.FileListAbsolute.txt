@@ -15,3 +15,4 @@ C:\Users\Frosina\Documents\TetrisGame\TetrisGame\bin\Debug\TetrisGame.pdb
 C:\Users\Frosina\Documents\TetrisGame\TetrisGame\obj\Debug\TetrisGame.Properties.Resources.resources
 C:\Users\Frosina\Documents\TetrisGame\TetrisGame\obj\Debug\TetrisGame.Tetris.resources
 C:\Users\Frosina\Documents\TetrisGame\TetrisGame\obj\Debug\TetrisGame.csproj.GenerateResource.Cache
+C:\Users\Frosina\Documents\TetrisGame\TetrisGame\obj\Debug\TetrisGame.csprojResolveAssemblyReference.cache

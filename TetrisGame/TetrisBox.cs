@@ -12,10 +12,10 @@ namespace TetrisGame
     {
         public Board board;
         public Timer timer;
-        public int lines;
-        public long score;
-        public bool playing;
-        public bool paused;
+        public int lines = 0;
+        public long score = 0;
+        public bool playing = false;
+        public bool paused = false;
         
         
         public TetrisBox(Point p, int width, int height)
@@ -24,14 +24,15 @@ namespace TetrisGame
             this.Location = p;
             this.Width = width;
             this.Height = height;
-            board = new Board(20, 10, 20, Color.SeaShell, this.Location.X, this.Location.Y);
+            board = new Board(20, 10, 20, Color.SeaShell, this.Location);
+            timer = new Timer();
+            timer.Interval = 1000;
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            e.Graphics.FillRectangle(new SolidBrush(board.backgroundColor), this.Location.X, this.Location.Y, this.Location.X * 10, this.Location.Y * 20);
-            board.Draw(new SolidBrush(board.backgroundColor), e.Graphics);
+            board.Draw(new SolidBrush(board.backgroundColor), new Pen(Color.LightGray), e.Graphics);
         }
     }
 }

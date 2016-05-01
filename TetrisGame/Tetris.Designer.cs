@@ -34,9 +34,6 @@
             this.btnAbout = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.AboutPanel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnBack = new System.Windows.Forms.Button();
             this.GamePanel3 = new System.Windows.Forms.Panel();
             this.lbLines = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -48,13 +45,16 @@
             this.lbTime = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.AboutPanel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnBack = new System.Windows.Forms.Button();
             this.MenuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.AboutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.GamePanel3.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.AboutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuPanel1
@@ -63,7 +63,7 @@
             this.MenuPanel1.Controls.Add(this.btnAbout);
             this.MenuPanel1.Controls.Add(this.btnPlay);
             this.MenuPanel1.Controls.Add(this.pictureBox1);
-            this.MenuPanel1.Location = new System.Drawing.Point(12, 12);
+            this.MenuPanel1.Location = new System.Drawing.Point(3, 6);
             this.MenuPanel1.Name = "MenuPanel1";
             this.MenuPanel1.Size = new System.Drawing.Size(429, 435);
             this.MenuPanel1.TabIndex = 1;
@@ -118,41 +118,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // AboutPanel2
-            // 
-            this.AboutPanel2.Controls.Add(this.pictureBox2);
-            this.AboutPanel2.Controls.Add(this.btnBack);
-            this.AboutPanel2.Location = new System.Drawing.Point(490, 12);
-            this.AboutPanel2.Name = "AboutPanel2";
-            this.AboutPanel2.Size = new System.Drawing.Size(429, 435);
-            this.AboutPanel2.TabIndex = 3;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::TetrisGame.Properties.Resources.about;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(423, 403);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.LavenderBlush;
-            this.btnBack.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.DimGray;
-            this.btnBack.Image = global::TetrisGame.Properties.Resources.IconBackBtn;
-            this.btnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBack.Location = new System.Drawing.Point(17, 407);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(76, 25);
-            this.btnBack.TabIndex = 3;
-            this.btnBack.Text = "Back";
-            this.btnBack.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // GamePanel3
             // 
             this.GamePanel3.Controls.Add(this.lbLines);
@@ -163,7 +128,7 @@
             this.GamePanel3.Controls.Add(this.groupBox2);
             this.GamePanel3.Controls.Add(this.groupBox1);
             this.GamePanel3.Controls.Add(this.button2);
-            this.GamePanel3.Location = new System.Drawing.Point(9, 243);
+            this.GamePanel3.Location = new System.Drawing.Point(3, 6);
             this.GamePanel3.Name = "GamePanel3";
             this.GamePanel3.Size = new System.Drawing.Size(429, 435);
             this.GamePanel3.TabIndex = 0;
@@ -296,13 +261,48 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
             // 
+            // AboutPanel2
+            // 
+            this.AboutPanel2.Controls.Add(this.pictureBox2);
+            this.AboutPanel2.Controls.Add(this.btnBack);
+            this.AboutPanel2.Location = new System.Drawing.Point(3, 6);
+            this.AboutPanel2.Name = "AboutPanel2";
+            this.AboutPanel2.Size = new System.Drawing.Size(429, 435);
+            this.AboutPanel2.TabIndex = 3;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::TetrisGame.Properties.Resources.about;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(423, 403);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btnBack.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.DimGray;
+            this.btnBack.Image = global::TetrisGame.Properties.Resources.IconBackBtn;
+            this.btnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBack.Location = new System.Drawing.Point(17, 407);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(76, 25);
+            this.btnBack.TabIndex = 3;
+            this.btnBack.Text = "Back";
+            this.btnBack.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // Tetris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(931, 750);
+            this.ClientSize = new System.Drawing.Size(438, 449);
             this.Controls.Add(this.GamePanel3);
             this.Controls.Add(this.AboutPanel2);
             this.Controls.Add(this.MenuPanel1);
@@ -313,14 +313,14 @@
             this.Text = "Tetris";
             this.MenuPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.AboutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.GamePanel3.ResumeLayout(false);
             this.GamePanel3.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.AboutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
