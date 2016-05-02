@@ -12,7 +12,7 @@ namespace TetrisGame
     {
         public Board board;
         public Timer timer;
-        public int lines = 0;
+        public int level = 1;
         public long score = 0;
         public bool playing = false;
         public bool paused = false;
@@ -24,9 +24,6 @@ namespace TetrisGame
             this.Location = p;
             this.Width = width;
             this.Height = height;
-            board = new Board(20, 10, 20, Color.SeaShell, this.Location);
-            timer = new Timer();
-            timer.Interval = 1000;
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -34,5 +31,51 @@ namespace TetrisGame
             base.OnPaint(e);
             board.Draw(new SolidBrush(board.backgroundColor), new Pen(Color.LightGray), e.Graphics);
         }
+
+        private void updateScore(int n)
+        {
+            score += n;
+            this.Controls[0].Controls[0].Text = score.ToString();
+        }
+
+        private void updateLevel()
+        {
+            level++;
+            this.Controls[1].Text = level.ToString();
+        }
+
+        public void startGame()
+        {
+            playing = true;
+            paused = false;
+            score = 0;
+            level = 1;
+            Point location = new Point(this.Location.X + 10, this.Location.Y + 5);
+            board = new Board(20, 10, 20, Color.SeaShell, location);
+            timer = new Timer();
+            timer.Interval = 1000;
+        }
+
+        public void continueGame()
+        {
+            playing = true;
+            paused = false;
+            timer.Start();
+        }
+
+        public void pauseGame()
+        {
+            playing = false;
+            paused = true;
+            timer.Stop();
+        }
+
+        public void endGame()
+        {
+            playing = false;
+            paused = false;
+            timer.Stop();
+        }
+
     }
 }

@@ -47,6 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Board.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Square.cs" />
     <Compile Include="Tetrimino.cs" />
     <Compile Include="Tetris.cs">
@@ -62,14 +67,9 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Tetris.resx">
       <DependentUpon>Tetris.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,10 +93,37 @@
     <None Include="Resources\photo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\IconBackBtn.png" />
+    <None Include="Resources\about.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\about.png" />
+    <None Include="Resources\buttonQuit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonMainMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonPause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonPlay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonNewGame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExitButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewGameButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backButton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
