@@ -1,21 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TetrisGame
 {
+    /// <summary>
+    /// The form of the Tetris game.
+    /// </summary>
     public partial class Tetris : Form
     {
-        private TetrisBox box;
-        private Timer timer;
-        private int time;
-
+        private TetrisBox box;  // control for the game
+        private Timer timer;  // timer that helps calculate the time that the game is played
+        private int time;  // the time that the game is played
+        /// <summary>
+        /// Initializes a new instance of the Tetris class.
+        /// </summary>
         public Tetris()
         {
             InitializeComponent();
@@ -32,7 +30,9 @@ namespace TetrisGame
             time = 0;
             initializeTooltip();
         }
-
+        /// <summary>
+        /// Sets tooltips to buttons.
+        /// </summary>
         private void initializeTooltip()
         {
             toolTip.SetToolTip(btnPause, "Pause/Play");
@@ -41,33 +41,44 @@ namespace TetrisGame
             toolTip.SetToolTip(btnReplay, "New Game");
             toolTip.SetToolTip(btnHelp, "Help");
         }
-
-        private void changeView(string s)
+        /// <summary>
+        /// It is used to switch the view panel in the form.
+        /// </summary>
+        /// <param name="view"></param>
+        private void changeView(string view)
         {
-            if(s == "menu")
+            if(view == "menu")
             {
                 MenuPanel1.Visible = true;
                 AboutPanel2.Visible = false;
                 GamePanel3.Visible = false;
             }
-            else if (s == "about")
+            else if (view == "about")
             {
                 MenuPanel1.Visible = false;
                 AboutPanel2.Visible = true;
                 GamePanel3.Visible = false;
             }
-            else if (s == "game"){
+            else if (view == "game"){
                 MenuPanel1.Visible = false;
                 AboutPanel2.Visible = false;
                 GamePanel3.Visible = true;
             }
         }
-
+        /// <summary>
+        /// Exits the application.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
         }
-
+        /// <summary>
+        /// Returns from the About view to the view that was previous shown.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBack_Click(object sender, EventArgs e)
         {
             if (box.paused)
@@ -75,12 +86,18 @@ namespace TetrisGame
             else
                 changeView("menu");
         }
-
+        /// <summary>
+        ///  Occurs when the timer interval has elapsed and the timer is enabled.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer_Tick(object sender, EventArgs e)
         {
             updateTime();
         }
-
+        /// <summary>
+        /// Updates the time of the game.
+        /// </summary>
         private void updateTime()
         {
             time = time + 1;
@@ -88,19 +105,31 @@ namespace TetrisGame
             int minutes = time / 60;
             lbTime.Text = String.Format("{0:00}:{1:00}", minutes, seconds);
         }
-
+        /// <summary>
+        /// Shows the About view.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAbout_Click(object sender, EventArgs e)
         {
             changeView("about");
         }
-
+        /// <summary>
+        /// Starts the game.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPlay_Click(object sender, EventArgs e)
         {
             changeView("game");
             timer.Start();
             box.startGame();
         }
-
+        /// <summary>
+        /// Pauses the game.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPause_Click(object sender, EventArgs e)
         {
             if (box.playing)
@@ -116,12 +145,20 @@ namespace TetrisGame
                 box.continueGame();
             }
         }
-
+        /// <summary>
+        /// Quits the game and closes the application.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnQuit_Click(object sender, EventArgs e)
         {
             Close();
         }
-
+        /// <summary>
+        /// Ends the game and shows the MainMenu view.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMenu_Click(object sender, EventArgs e)
         {
             changeView("menu");
@@ -131,7 +168,11 @@ namespace TetrisGame
             timer.Stop();
             box.endGame();
         }
-
+        /// <summary>
+        /// Shows the Help/About view.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnHelp_Click(object sender, EventArgs e)
         {
             btnPause.BackgroundImage = TetrisGame.Properties.Resources.buttonPlay;
@@ -139,7 +180,11 @@ namespace TetrisGame
             box.pauseGame();
             changeView("about");
         }
-
+        /// <summary>
+        /// Starts a new game.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReplay_Click(object sender, EventArgs e)
         {
             time = -1;
