@@ -17,3 +17,13 @@ C:\Users\Frosina\Documents\TetrisGame\TetrisGame\obj\Debug\TetrisGame.Tetris.res
 C:\Users\Frosina\Documents\TetrisGame\TetrisGame\obj\Debug\TetrisGame.csproj.GenerateResource.Cache
 C:\Users\Frosina\Documents\TetrisGame\TetrisGame\obj\Debug\TetrisGame.csprojResolveAssemblyReference.cache
 C:\Users\Frosina\Documents\TetrisGame\TetrisGame\obj\Debug\TetrisGame.DialogBox.resources
+E:\Life after Hogwarts\Level 2. part 2\VP\Tetris\TetrisGame\TetrisGame\bin\Debug\TetrisGame.exe.config
+E:\Life after Hogwarts\Level 2. part 2\VP\Tetris\TetrisGame\TetrisGame\obj\Debug\TetrisGame.exe
+E:\Life after Hogwarts\Level 2. part 2\VP\Tetris\TetrisGame\TetrisGame\obj\Debug\TetrisGame.pdb
+E:\Life after Hogwarts\Level 2. part 2\VP\Tetris\TetrisGame\TetrisGame\bin\Debug\TetrisGame.exe
+E:\Life after Hogwarts\Level 2. part 2\VP\Tetris\TetrisGame\TetrisGame\bin\Debug\TetrisGame.pdb
+E:\Life after Hogwarts\Level 2. part 2\VP\Tetris\TetrisGame\TetrisGame\obj\Debug\TetrisGame.csprojResolveAssemblyReference.cache
+E:\Life after Hogwarts\Level 2. part 2\VP\Tetris\TetrisGame\TetrisGame\obj\Debug\TetrisGame.DialogBox.resources
+E:\Life after Hogwarts\Level 2. part 2\VP\Tetris\TetrisGame\TetrisGame\obj\Debug\TetrisGame.Properties.Resources.resources
+E:\Life after Hogwarts\Level 2. part 2\VP\Tetris\TetrisGame\TetrisGame\obj\Debug\TetrisGame.Tetris.resources
+E:\Life after Hogwarts\Level 2. part 2\VP\Tetris\TetrisGame\TetrisGame\obj\Debug\TetrisGame.csproj.GenerateResource.Cache
