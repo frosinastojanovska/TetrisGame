@@ -11,6 +11,7 @@ namespace TetrisGame
         private TetrisBox box;  // control for the game
         private Timer timer;  // timer that helps calculate the time that the game is played
         private int time;  // the time that the game is played
+        private DialogBox dialog;  // dialog box
         /// <summary>
         /// Initializes a new instance of the Tetris class.
         /// </summary>
@@ -128,21 +129,35 @@ namespace TetrisGame
         /// <summary>
         /// Pauses the game.
         /// </summary>
+        private void pauseGame()
+        {
+            btnPause.BackgroundImage = TetrisGame.Properties.Resources.buttonPlay;
+            timer.Stop();
+            box.pauseGame();
+        }
+        /// <summary>
+        /// Resumes the game.
+        /// </summary>
+        private void resumeGame()
+        {
+            btnPause.BackgroundImage = TetrisGame.Properties.Resources.buttonPause;
+            timer.Start();
+            box.continueGame();
+        }
+        /// <summary>
+        /// Pauses or resumes the game.
+        /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnPause_Click(object sender, EventArgs e)
         {
             if (box.playing)
             {
-                btnPause.BackgroundImage = TetrisGame.Properties.Resources.buttonPlay;
-                timer.Stop();
-                box.pauseGame();
+                pauseGame();
             }
             else   if (box.paused)
             {
-                btnPause.BackgroundImage = TetrisGame.Properties.Resources.buttonPause;
-                timer.Start();
-                box.continueGame();
+                resumeGame();
             }
         }
         /// <summary>
@@ -152,7 +167,13 @@ namespace TetrisGame
         /// <param name="e"></param>
         private void btnQuit_Click(object sender, EventArgs e)
         {
-            Close();
+            pauseGame();
+            dialog = new DialogBox("Quit the game and exit the application?");
+            DialogResult result = dialog.ShowDialog();
+            if (result == DialogResult.OK)
+                Close();
+            else
+                resumeGame();
         }
         /// <summary>
         /// Ends the game and shows the MainMenu view.
@@ -161,12 +182,20 @@ namespace TetrisGame
         /// <param name="e"></param>
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            changeView("menu");
-            btnPause.BackgroundImage = TetrisGame.Properties.Resources.buttonPause;
-            time = -1;
-            updateTime();
-            timer.Stop();
-            box.endGame();
+            pauseGame();
+            dialog = new DialogBox("Go to Main Menu and quit the game?");
+            DialogResult result = dialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                changeView("menu");
+                btnPause.BackgroundImage = TetrisGame.Properties.Resources.buttonPause;
+                time = -1;
+                updateTime();
+                timer.Stop();
+                box.endGame();
+            }
+            else
+                resumeGame();
         }
         /// <summary>
         /// Shows the Help/About view.
@@ -175,9 +204,7 @@ namespace TetrisGame
         /// <param name="e"></param>
         private void btnHelp_Click(object sender, EventArgs e)
         {
-            btnPause.BackgroundImage = TetrisGame.Properties.Resources.buttonPlay;
-            timer.Stop();
-            box.pauseGame();
+            pauseGame();
             changeView("about");
         }
         /// <summary>

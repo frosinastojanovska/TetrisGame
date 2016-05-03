@@ -36,6 +36,8 @@
             this.btnPlay = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.AboutPanel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnBack = new System.Windows.Forms.Button();
             this.GamePanel3 = new System.Windows.Forms.Panel();
             this.btnHelp = new System.Windows.Forms.Button();
             this.btnReplay = new System.Windows.Forms.Button();
@@ -50,16 +52,14 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbTime = new System.Windows.Forms.Label();
             this.gbNextTetrimino = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnBack = new System.Windows.Forms.Button();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.MenuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.AboutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.GamePanel3.SuspendLayout();
             this.gbScore.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuPanel1
@@ -140,6 +140,34 @@
             this.AboutPanel2.Name = "AboutPanel2";
             this.AboutPanel2.Size = new System.Drawing.Size(429, 435);
             this.AboutPanel2.TabIndex = 3;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::TetrisGame.Properties.Resources.about;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(423, 403);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BackgroundImage = global::TetrisGame.Properties.Resources.backButton;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.DimGray;
+            this.btnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBack.Location = new System.Drawing.Point(9, 405);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(83, 28);
+            this.btnBack.TabIndex = 3;
+            this.btnBack.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // GamePanel3
             // 
@@ -352,34 +380,6 @@
             this.gbNextTetrimino.TabStop = false;
             this.gbNextTetrimino.Text = "Next ";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::TetrisGame.Properties.Resources.about;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(423, 403);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.BackgroundImage = global::TetrisGame.Properties.Resources.backButton;
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.DimGray;
-            this.btnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBack.Location = new System.Drawing.Point(9, 405);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(83, 28);
-            this.btnBack.TabIndex = 3;
-            this.btnBack.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // Tetris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -394,17 +394,18 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Tetris";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tetris";
             this.MenuPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.AboutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.GamePanel3.ResumeLayout(false);
             this.GamePanel3.PerformLayout();
             this.gbScore.ResumeLayout(false);
             this.gbScore.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

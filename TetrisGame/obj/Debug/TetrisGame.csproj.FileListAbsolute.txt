@@ -16,3 +16,4 @@ C:\Users\Frosina\Documents\TetrisGame\TetrisGame\obj\Debug\TetrisGame.Properties
 C:\Users\Frosina\Documents\TetrisGame\TetrisGame\obj\Debug\TetrisGame.Tetris.resources
 C:\Users\Frosina\Documents\TetrisGame\TetrisGame\obj\Debug\TetrisGame.csproj.GenerateResource.Cache
 C:\Users\Frosina\Documents\TetrisGame\TetrisGame\obj\Debug\TetrisGame.csprojResolveAssemblyReference.cache
+C:\Users\Frosina\Documents\TetrisGame\TetrisGame\obj\Debug\TetrisGame.DialogBox.resources

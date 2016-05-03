@@ -153,6 +153,16 @@ namespace TetrisGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cancelButton {
+            get {
+                object obj = ResourceManager.GetObject("cancelButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ExitButton {
             get {
                 object obj = ResourceManager.GetObject("ExitButton", resourceCulture);
@@ -176,6 +186,16 @@ namespace TetrisGame.Properties {
         internal static System.Drawing.Bitmap NewGameButton {
             get {
                 object obj = ResourceManager.GetObject("NewGameButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap okButton {
+            get {
+                object obj = ResourceManager.GetObject("okButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

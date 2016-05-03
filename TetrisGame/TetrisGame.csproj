@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Board.cs" />
+    <Compile Include="DialogBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBox.Designer.cs">
+      <DependentUpon>DialogBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -65,6 +71,9 @@
     <Compile Include="TetrisBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <EmbeddedResource Include="DialogBox.resx">
+      <DependentUpon>DialogBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -124,6 +133,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\backButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\okButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelButton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
