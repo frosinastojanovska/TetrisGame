@@ -16,16 +16,16 @@ namespace TetrisGame
         public Square s2 { get; set; }
         public Square s3 { get; set; }
         public Square s4 { get; set; }
-        public float X { get; set; }
-        public float Y { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
         public Color color { get; set; }
         public int state { get; set; }
 
-        public Tetrimino(Point p, float x, float y)
+        public Tetrimino(Color c)
         {
-            X = x;
-            Y = y;
-            color = Color.PeachPuff;
+            X = 4;
+            Y = 0;
+            color = c;
         }
 
         public void Draw(Graphics g)
@@ -85,4 +85,6 @@ namespace TetrisGame
         /// </summary>
         public abstract void rotate();
     }
+
+
 }
