@@ -46,8 +46,26 @@ namespace TetrisGame
         /// <param name="g"></param>
         public void Draw(Brush brush, Pen pen, Graphics g)
         {
-            g.FillRectangle(brush, this.Location.X, this.Location.Y, this.Columns*this.SquareSize, this.Rows*this.SquareSize);
+            g.FillRectangle(brush, this.Location.X, this.Location.Y, this.Columns * this.SquareSize, this.Rows * this.SquareSize);
             g.DrawRectangle(pen, this.Location.X, this.Location.Y, this.Columns * this.SquareSize, this.Rows * this.SquareSize);
+            drawSquares(g);
+        }
+        /// <summary>
+        /// Draws the immovable tetriminoes of the board
+        /// </summary>
+        /// <param name="g"></param>
+        public void drawSquares(Graphics g)
+        {
+            foreach (Square[] square in immovableSquares)
+            {
+                for (int i = 0; i < square.Length; i++)
+                {
+                    if (square[i] != null)
+                    {
+                        square[i].Draw(g);
+                    }
+                }
+            }
         }
     }
 }

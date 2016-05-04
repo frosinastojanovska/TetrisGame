@@ -60,6 +60,11 @@
     </Compile>
     <Compile Include="Square.cs" />
     <Compile Include="Tetrimino.cs" />
+    <Compile Include="TetriminoI.cs" />
+    <Compile Include="TetriminoJ.cs" />
+    <Compile Include="TetriminoL.cs" />
+    <Compile Include="TetriminoO.cs" />
+    <Compile Include="TetriminoT.cs" />
     <Compile Include="Tetris.cs">
       <SubType>Form</SubType>
     </Compile>

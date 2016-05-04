@@ -9,15 +9,12 @@ namespace TetrisGame
 {
     public class TetriminoJ : Tetrimino
     {
-        private int state { get; set; }
-
-        public TetriminoJ(Point p): base(Color.Thistle)
+        public TetriminoJ(Point p, List<Square[]> b) : base(Color.Thistle, b)
         {
             s1 = new Square(X, Y, color, p);
             s2 = new Square(X, Y + 1, color, p);
             s3 = new Square(X, Y + 2, color, p);
             s4 = new Square(X - 1, Y + 2, color, p);
-            state = 1;
         }
 
         public override bool safeDown()

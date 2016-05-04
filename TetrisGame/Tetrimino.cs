@@ -20,14 +20,15 @@ namespace TetrisGame
         public int Y { get; set; }
         public Color color { get; set; }
         public int state { get; set; }
+        public List<Square[]> boardSquares;
 
-        public Tetrimino(Color c)
+        public Tetrimino(Color c, List<Square[]> b)
         {
             X = 4;
             Y = 0;
             color = c;
             state = 1;
-         //   s1 = new Square(X, Y, c, )
+            boardSquares = b;
         }
 
         public void Draw(Graphics g)

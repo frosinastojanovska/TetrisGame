@@ -9,15 +9,12 @@ namespace TetrisGame
 {
     public class TetriminoT : Tetrimino
     {
-        private int state { get; set; }
-
-        public TetriminoT(Point p) : base(Color.PeachPuff)
+        public TetriminoT(Point p, List<Square[]> b) : base(Color.PeachPuff, b)
         {
             s1 = new Square(X, Y, color, p);
             s2 = new Square(X + 1, Y, color, p);
             s3 = new Square(X + 2, Y, color, p);
             s4 = new Square(X + 1, Y + 1, color, p);
-            state = 1;
         }
 
         public override bool safeDown()
