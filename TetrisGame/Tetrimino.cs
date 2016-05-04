@@ -26,6 +26,8 @@ namespace TetrisGame
             X = 4;
             Y = 0;
             color = c;
+            state = 1;
+         //   s1 = new Square(X, Y, c, )
         }
 
         public void Draw(Graphics g)
