@@ -101,22 +101,5 @@ namespace TetrisGame
                 state = 1;
             }
         }
-
-        public override bool safeDown(List<Square[]> boardSquares)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override bool safeLeft(List<Square[]> boardSquares)
-        {
-            if (X == 0) return false;
-            return true;
-        }
-
-        public override bool safeRight(List<Square[]> boardSquares)
-        {
-            if (X == 9) return false;
-            return true;
-        }
     }
 }

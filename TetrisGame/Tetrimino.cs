@@ -47,11 +47,14 @@ namespace TetrisGame
         /// <summary>
         /// Move methods: moves the tetrimino down, left or right accordingly.
         /// </summary>
-        public void moveDown()
+        public void moveDown(List<Square[]> boardSquares)
         {
-            for (int i = 0; i < 4; i++)
+            if (safeDown(boardSquares) == true)
             {
-                s[i].moveDown();
+                for (int i = 0; i < 4; i++)
+                {
+                    s[i].moveDown();
+                }
             }
         }
 
@@ -74,10 +77,53 @@ namespace TetrisGame
         /// <summary>
         /// Safe methods: define whether the tetrimino can move left, right or down accordingly.
         /// </summary>
+        public bool safeLeft(List<Square[]> boardSquares)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if (s[i].X < 1)
+                {
+                    return false;
+                }
+                if (boardSquares[s[i].Y][s[i].X - 1] != null)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        public bool safeRight(List<Square[]> boardSquares)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if (s[i].X >= boardSquares[0].Length - 1)
+                {
+                    return false;
+                }
+                if (boardSquares[s[i].Y][s[i].X + 1] != null)
+                {
+                    return false;
+                }
 
-        public abstract bool safeLeft(List<Square[]> boardSquares);
-        public abstract bool safeRight(List<Square[]> boardSquares);
-        public abstract bool safeDown(List<Square[]> boardSquares);
+            }
+            return true;
+        }
+        public bool safeDown(List<Square[]> boardSquares)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if (s[i].Y >= boardSquares.Count - 1)
+                {
+                    return false;
+                }
+                if (boardSquares[s[i].Y + 1][s[i].X] != null)
+                {
+                    return false;
+                }
+
+            }
+            return true;
+        }
 
         /// <summary>
         /// Checks if there is enough space at the top of the board to add the new tetrimino.

@@ -49,7 +49,7 @@
             this.lbScore = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbTime = new System.Windows.Forms.GroupBox();
             this.lbTime = new System.Windows.Forms.Label();
             this.gbNextTetrimino = new System.Windows.Forms.GroupBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -59,7 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.GamePanel3.SuspendLayout();
             this.gbScore.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbTime.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuPanel1
@@ -180,7 +180,7 @@
             this.GamePanel3.Controls.Add(this.gbScore);
             this.GamePanel3.Controls.Add(this.label3);
             this.GamePanel3.Controls.Add(this.label2);
-            this.GamePanel3.Controls.Add(this.groupBox2);
+            this.GamePanel3.Controls.Add(this.gbTime);
             this.GamePanel3.Controls.Add(this.gbNextTetrimino);
             this.GamePanel3.Location = new System.Drawing.Point(3, 6);
             this.GamePanel3.Name = "GamePanel3";
@@ -343,17 +343,17 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Level:";
             // 
-            // groupBox2
+            // gbTime
             // 
-            this.groupBox2.Controls.Add(this.lbTime);
-            this.groupBox2.Font = new System.Drawing.Font("Cooper Black", 12F);
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.groupBox2.Location = new System.Drawing.Point(251, 124);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(166, 73);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Time";
+            this.gbTime.Controls.Add(this.lbTime);
+            this.gbTime.Font = new System.Drawing.Font("Cooper Black", 12F);
+            this.gbTime.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.gbTime.Location = new System.Drawing.Point(251, 124);
+            this.gbTime.Name = "gbTime";
+            this.gbTime.Size = new System.Drawing.Size(166, 73);
+            this.gbTime.TabIndex = 5;
+            this.gbTime.TabStop = false;
+            this.gbTime.Text = "Time";
             // 
             // lbTime
             // 
@@ -405,8 +405,8 @@
             this.GamePanel3.PerformLayout();
             this.gbScore.ResumeLayout(false);
             this.gbScore.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gbTime.ResumeLayout(false);
+            this.gbTime.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -422,7 +422,7 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Panel GamePanel3;
         private System.Windows.Forms.GroupBox gbNextTetrimino;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbTime;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox gbScore;

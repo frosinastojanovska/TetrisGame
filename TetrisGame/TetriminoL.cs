@@ -20,22 +20,7 @@ namespace TetrisGame
             s[3].X = X + 1;
             s[3].Y = Y + 2;
         }
-
-        public override bool safeDown(List<Square[]> boardSquares)
-        {
-            return true;
-        }
-
-        public override bool safeRight(List<Square[]> boardSquares)
-        {
-            return true;
-        }
-
-        public override bool safeLeft(List<Square[]> boardSquares)
-        {
-            return true;
-        }
-
+        
         public override void rotate(List<Square[]> boardSquares)
         {
             if (state == 1)

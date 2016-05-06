@@ -32,26 +32,7 @@ namespace TetrisGame
 
         public override void rotate(List<Square[]> boardSquares)
         {
-            
-        }
 
-        public override bool safeDown(List<Square[]> boardSquares)
-        {
-            //immovableSquares
-            //  if (Tetris.TetrisBox.board.immovableSquares)
-            throw new NotImplementedException();
-        }
-
-        public override bool safeLeft(List<Square[]> boardSquares)
-        {
-            if (X == 0) return false;
-            return true;
-        }
-
-        public override bool safeRight(List<Square[]> boardSquares)
-        {
-            if (s[1].X == 9) return false;
-            return true;
         }
     }
 }

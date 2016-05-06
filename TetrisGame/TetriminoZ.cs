@@ -31,20 +31,5 @@ namespace TetrisGame
         {
             throw new NotImplementedException();
         }
-
-        public override bool safeDown(List<Square[]> boardSquares)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override bool safeLeft(List<Square[]> boardSquares)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override bool safeRight(List<Square[]> boardSquares)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
