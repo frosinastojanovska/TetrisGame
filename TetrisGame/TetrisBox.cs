@@ -52,6 +52,7 @@ namespace TetrisGame
             Tetriminoes.Add(5, new TetriminoS());
             Tetriminoes.Add(6, new TetriminoZ());
             graphics = this.CreateGraphics();
+            //createTetrimino(this.CreateGraphics());
             timer = new Timer();
             timer.Interval = 10;
             timer.Tick += timer_Tick;
