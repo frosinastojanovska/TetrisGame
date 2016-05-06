@@ -9,65 +9,74 @@ namespace TetrisGame
 {
     public class TetriminoT : Tetrimino
     {
-        public TetriminoT(Point p, List<Square[]> b) : base(Color.PeachPuff, b)
+        public TetriminoT() : base(Color.PeachPuff)
         {
-            s1 = new Square(X, Y, color, p);
-            s2 = new Square(X + 1, Y, color, p);
-            s3 = new Square(X + 2, Y, color, p);
-            s4 = new Square(X + 1, Y + 1, color, p);
+            s[1].X = X + 1;
+            s[1].Y = Y;
+
+            s[2].X = X + 2;
+            s[2].Y = Y;
+
+            s[3].X = X + 1;
+            s[3].Y = Y + 1;
         }
 
-        public override bool safeDown()
-        {
-            return true;
-        }
-
-        public override bool safeRight()
-        {
-            return true;
-        }
-
-        public override bool safeLeft()
+        public override bool safeDown(List<Square[]> boardSquares)
         {
             return true;
         }
 
-        public override void rotate()
+        public override bool safeRight(List<Square[]> boardSquares)
+        {
+            return true;
+        }
+
+        public override bool safeLeft(List<Square[]> boardSquares)
+        {
+            return true;
+        }
+
+        public override void rotate(List<Square[]> boardSquares)
         {
             if (state == 1)
             {
-                s1.X += 2;
-                s2.X += 1;
-                s2.Y += 1;
-                s3.Y += 2;
+                s[0].X += 2;
+                s[1].X += 1;
+                s[1].Y += 1;
+                s[2].Y += 2;
                 state = 2;
             }
             else if (state == 2)
             {
-                s1.Y += 2;
-                s2.X -= 1;
-                s2.Y += 1;
-                s3.X -= 2;
+                s[0].Y += 2;
+                s[1].X -= 1;
+                s[1].Y += 1;
+                s[2].X -= 2;
                 state = 3;
             }
             else if (state == 3)
             {
-                s1.X -= 1;
-                s2.Y -= 1;
-                s3.X += 1;
-                s3.Y -= 2;
-                s4.X += 1;
+                s[0].X -= 1;
+                s[1].Y -= 1;
+                s[2].X += 1;
+                s[2].Y -= 2;
+                s[3].X += 1;
                 state = 4;
             }
             else
             {
-                s1.X -= 1;
-                s1.Y -= 2;
-                s2.Y -= 1;
-                s3.X += 1;
-                s4.X -= 1;
+                s[0].X -= 1;
+                s[0].Y -= 2;
+                s[1].Y -= 1;
+                s[2].X += 1;
+                s[3].X -= 1;
                 state = 1;
             }
+        }
+
+        public override bool canCreate()
+        {
+            throw new NotImplementedException();
         }
     }
 }

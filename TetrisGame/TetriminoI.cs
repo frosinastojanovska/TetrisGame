@@ -11,17 +11,22 @@ namespace TetrisGame
     {
         public TetriminoI() : base(Color.Aqua)
         {
-            s2.X = X;
-            s2.Y = Y + 1;
+            s[1].X = X;
+            s[1].Y = Y + 1;
             
-            s3.X = X;
-            s3.Y = Y + 2;
+            s[2].X = X;
+            s[2].Y = Y + 2;
 
-            s4.X = X;
-            s4.Y = Y + 3;
+            s[3].X = X;
+            s[3].Y = Y + 3;
         }
 
-        public override void rotate()
+        public override bool canCreate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void rotate(List<Square[]> boardSquares)
         {
             //state 1 -> state 2
             if(state == 1)
@@ -29,14 +34,14 @@ namespace TetrisGame
                 X += 2;
                 Y += 1;
 
-                s1.X = X;
-                s1.Y = Y;
+                s[0].X = X;
+                s[0].Y = Y;
 
-                s2.X += 1;
-                s3.Y -= 1;
+                s[1].X += 1;
+                s[2].Y -= 1;
 
-                s4.Y -= 2;
-                s4.X -= 1;
+                s[3].Y -= 2;
+                s[3].X -= 1;
 
                 state = 2;
             }
@@ -48,14 +53,14 @@ namespace TetrisGame
                 X -= 1;
                 Y += 2;
 
-                s1.X = X;
-                s1.Y = Y;
+                s[0].X = X;
+                s[0].Y = Y;
 
-                s2.Y += 1;
-                s3.X += 1;
+                s[1].Y += 1;
+                s[2].X += 1;
 
-                s4.X += 2;
-                s4.Y -= 1;
+                s[3].X += 2;
+                s[3].Y -= 1;
 
                 state = 3;
             }
@@ -66,14 +71,14 @@ namespace TetrisGame
                 X -= 2;
                 Y -= 1;
 
-                s1.X = X;
-                s1.Y = Y;
+                s[0].X = X;
+                s[0].Y = Y;
 
-                s2.X -= 1;
-                s3.Y += 1;
+                s[1].X -= 1;
+                s[2].Y += 1;
 
-                s4.X += 1;
-                s4.Y += 2;
+                s[3].X += 1;
+                s[3].Y += 2;
 
                 state = 4;
             }
@@ -84,31 +89,31 @@ namespace TetrisGame
                 X += 1;
                 Y -= 2;
 
-                s1.X = X;
-                s1.Y = Y;
+                s[0].X = X;
+                s[0].Y = Y;
 
-                s2.Y -= 1;
-                s3.X -= 1;
+                s[1].Y -= 1;
+                s[2].X -= 1;
 
-                s4.X -= 2;
-                s4.Y += 1;
+                s[3].X -= 2;
+                s[3].Y += 1;
 
                 state = 1;
             }
         }
 
-        public override bool safeDown()
+        public override bool safeDown(List<Square[]> boardSquares)
         {
             throw new NotImplementedException();
         }
 
-        public override bool safeLeft()
+        public override bool safeLeft(List<Square[]> boardSquares)
         {
             if (X == 0) return false;
             return true;
         }
 
-        public override bool safeRight()
+        public override bool safeRight(List<Square[]> boardSquares)
         {
             if (X == 9) return false;
             return true;

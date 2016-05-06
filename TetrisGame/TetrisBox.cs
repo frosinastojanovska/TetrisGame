@@ -1,8 +1,16 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace TetrisGame
 {
+    public enum Direction
+    {
+        Down,
+        Left,
+        Right
+    }
     /// <summary>
     /// A class that represents the logic of the tetris game.
     /// It inherits from the class System.Windows.Forms.UserControl.
@@ -15,6 +23,10 @@ namespace TetrisGame
         public long score = 0;  // the current score of the player
         public bool playing = false; // indicates the running mode of the game
         public bool paused = false; // indicates the pause mode of the game
+        public Tetrimino currentTetrimino;  // tetrimino that moves
+        public Tetrimino nextTetrimino;  // next tetrimino that will move
+        public Dictionary<int, Tetrimino> Tetriminoes;
+        private static Random random = new Random(); // choose the next tetrimino
         
         /// <summary>
         /// Initializes a new instance of the TetrisBox class with the specific parameters.
@@ -28,6 +40,50 @@ namespace TetrisGame
             this.Location = p;
             this.Width = width;
             this.Height = height;
+            Tetriminoes = new Dictionary<int, Tetrimino>();
+            Tetriminoes.Add(0, new TetriminoO());
+            Tetriminoes.Add(1, new TetriminoI());
+            Tetriminoes.Add(2, new TetriminoJ());
+            Tetriminoes.Add(3, new TetriminoL());
+            Tetriminoes.Add(4, new TetriminoT());
+            Tetriminoes.Add(5, new TetriminoS());
+            Tetriminoes.Add(6, new TetriminoZ());
+            createTetrimino(this.CreateGraphics());
+        }
+        /// <summary>
+        /// Creates the next tetrimino that will fall
+        /// </summary>
+        /// <param name="g"></param>
+        public void createTetrimino(Graphics g)
+        {
+            if (nextTetrimino != null)
+            {
+                currentTetrimino = nextTetrimino;
+            }
+            else
+            {
+                currentTetrimino = Tetriminoes[random.Next(7)];
+            }
+            nextTetrimino = Tetriminoes[random.Next(7)];
+        }
+        /// <summary>
+        /// Moves the current tetrimino down, left or right
+        /// </summary>
+        public void move(Direction direction)
+        {
+            if (direction == Direction.Down)
+            {
+                currentTetrimino.moveDown();
+            }
+            else if (direction == Direction.Left)
+            {
+                currentTetrimino.moveLeft();
+            }
+            else
+            {
+                currentTetrimino.moveRight();
+            }
+            Invalidate();
         }
         /// <summary>
         /// Overriding the OnPaint method of the class System.Windows.Forms.
@@ -37,6 +93,7 @@ namespace TetrisGame
         {
             base.OnPaint(e);
             board.Draw(new SolidBrush(board.backgroundColor), new Pen(Color.LightGray), e.Graphics);
+            currentTetrimino.Draw(e.Graphics, board.Location);
         }
         /// <summary>
         /// Increases the score with the value of the parameter.
@@ -68,6 +125,10 @@ namespace TetrisGame
             board = new Board(20, 10, 20, Color.SeaShell, location);
             timer = new Timer();
             timer.Interval = 1000;
+            currentTetrimino = null;
+            nextTetrimino = null;
+            Graphics g = this.CreateGraphics();
+            createTetrimino(g);
         }
         /// <summary>
         /// Continues the game.
@@ -95,6 +156,23 @@ namespace TetrisGame
             playing = false;
             paused = false;
             timer.Stop();
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // TetrisBox
+            // 
+            this.Name = "TetrisBox";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TetrisBox_KeyDown);
+            this.ResumeLayout(false);
+
+        }
+
+        private void TetrisBox_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
 
     }

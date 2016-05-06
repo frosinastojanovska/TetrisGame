@@ -12,31 +12,36 @@ namespace TetrisGame
     /// </summary>
     public abstract class Tetrimino
     {
-        public Square s1 { get; set; }
-        public Square s2 { get; set; }
-        public Square s3 { get; set; }
-        public Square s4 { get; set; }
+        public Square[] s;
         public int X { get; set; }
         public int Y { get; set; }
         public Color color { get; set; }
         public int state { get; set; }
-        public List<Square[]> boardSquares;
 
-        public Tetrimino(Color c, List<Square[]> b)
+        public Tetrimino(Color c)
         {
-            X = 4;
+            X = 3;
             Y = 0;
             color = c;
             state = 1;
-            boardSquares = b;
+
+            s = new Square[4];
+            for(int i=0; i<4; i++)
+            {
+                s[i] = new Square();
+                s[i].color = c;
+            }
+
+            s[0].X = X;
+            s[0].Y = Y;
         }
 
-        public void Draw(Graphics g)
+        public void Draw(Graphics g, Point p)
         {
-            s1.Draw(g);
-            s2.Draw(g);
-            s3.Draw(g);
-            s4.Draw(g);
+           for(int i=0; i<4; i++)
+            {
+                s[i].Draw(g, p);
+            }
         }
 
         /// <summary>
@@ -44,49 +49,55 @@ namespace TetrisGame
         /// </summary>
         public void moveDown()
         {
-            s1.moveDown();
-            s2.moveDown();
-            s3.moveDown();
-            s4.moveDown();
+            for (int i = 0; i < 4; i++)
+            {
+                s[i].moveDown();
+            }
         }
 
         public void moveLeft()
         {
-            s1.moveLeft();
-            s2.moveLeft();
-            s3.moveLeft();
-            s4.moveLeft();
+            for (int i = 0; i < 4; i++)
+            {
+                s[i].moveLeft();
+            }
         }
 
         public void moveRight()
         {
-            s1.moveRight();
-            s2.moveRight();
-            s3.moveRight();
-            s4.moveRight();
+            for (int i = 0; i < 4; i++)
+            {
+                s[i].moveRight();
+            }
         }
 
         /// <summary>
         /// Safe methods: define whether the tetrimino can move left, right or down accordingly.
         /// </summary>
 
-        public abstract bool safeLeft();
-        public abstract bool safeRight();
-        public abstract bool safeDown();
+        public abstract bool safeLeft(List<Square[]> boardSquares);
+        public abstract bool safeRight(List<Square[]> boardSquares);
+        public abstract bool safeDown(List<Square[]> boardSquares);
+
+        /// <summary>
+        /// Checks if there is enough space at the top of the board to add the new tetrimino.
+        /// </summary>
+        /// <returns></returns>
+        public abstract bool canCreate();
 
 
         /// <summary>
         /// Method safe: uses the three safe-methods to define whether the tetrimino can be moved or rotated.
         /// </summary>
-        public bool safe()
+        public bool safe(List<Square[]> boardSquares)
         {
-            return safeLeft() && safeRight() && safeDown();
+            return safeLeft(boardSquares) && safeRight(boardSquares) && safeDown(boardSquares);
         }
 
         /// <summary>
-        /// Method rotate: rotates the tetrimino clockwise.
+        /// Method rotate: rotates the tetrimino clockwise if possible.
         /// </summary>
-        public abstract void rotate();
+        public abstract void rotate(List<Square[]> boardSquares);
     }
 
 

@@ -64,7 +64,9 @@
     <Compile Include="TetriminoJ.cs" />
     <Compile Include="TetriminoL.cs" />
     <Compile Include="TetriminoO.cs" />
+    <Compile Include="TetriminoS.cs" />
     <Compile Include="TetriminoT.cs" />
+    <Compile Include="TetriminoZ.cs" />
     <Compile Include="Tetris.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tetris.resx">
       <DependentUpon>Tetris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TetrisBox.resx">
+      <DependentUpon>TetrisBox.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

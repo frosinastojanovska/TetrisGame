@@ -10,25 +10,38 @@ namespace TetrisGame
     public class Square
     {
         public readonly float size = 20;
-        public float X { get; set; }
-        public float Y { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
         public Color color { get; set; }
         public bool canMove { get; set; }
-        public Point location { get; set; }
 
-        public Square(float x, float y, Color c, Point l)
+        public Square()
+        {
+            canMove = true;
+        }
+
+        public Square(int x, int y, Color c)
         {
             X = x;
             Y = y;
             color = c;
             canMove = true;
-            location = l;
         }
 
-        public void Draw(Graphics g)
+        /// <summary>
+        /// Checks whether a square is taken, if it is it is unsafe and a now tetrimino cannot occupy it.
+        /// </summary>
+        /// <returns></returns>
+        public bool safe(List<Square[]> boardSquares)
+        {
+            if (boardSquares.ElementAt(0)[4] == null) return true;
+            return false;
+        }
+
+        public void Draw(Graphics g, Point location)
         {
             g.FillRectangle(new SolidBrush(color), location.X + X * size, location.Y + Y * size, size, size);
-            g.DrawRectangle(new Pen(Color.RosyBrown), location.X + X * size, location.Y + Y * size, size, size);
+            g.DrawRectangle(new Pen(Color.RosyBrown, 2), location.X + X * size, location.Y + Y * size, size, size);
         }
 
         public void moveDown()

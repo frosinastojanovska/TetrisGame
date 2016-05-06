@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace TetrisGame
@@ -13,8 +14,6 @@ namespace TetrisGame
         public int SquareSize;  // size of the squares
         public Color backgroundColor;  // background color of the board
         public Point Location;  // location of the board
-        public Tetrimino currentTetrimino;  // tetrimino that moves
-        public Tetrimino nextTetrimino;  // next tetrimino that will move
         public List<Square[]> immovableSquares;  // container of immovable squares
         /// <summary>
         /// Initializes a new instance of the Board class with the specific parameters.
@@ -38,6 +37,32 @@ namespace TetrisGame
                 immovableSquares.Add(col);
             }
         }
+        /*
+        /// <summary>
+        /// Sets currentTetrimino to the previously nextTetrimino. Sets the nextTetrimino to a random new Tetrimino.
+        /// Draws the currentTetrimino.
+        /// </summary>
+        /// <param name="t"></param>
+
+        public void createTetrimino(Tetrimino t, Graphics g)
+        {
+            //checking if we can add a new tetrimino
+            //i.e. is the whole board filled up
+            currentTetrimino = nextTetrimino;
+            Random random = new Random();
+            int tetr = random.Next(7);
+            Tetriminoes.TryGetValue(tetr, out nextTetrimino);
+
+            if (currentTetrimino.canCreate())
+            {   //drawing
+                currentTetrimino.Draw(g);
+            } else
+            {
+                //Game over
+            }
+  
+        }*/
+        
         /// <summary>
         /// Draws the board.
         /// </summary>
@@ -56,15 +81,21 @@ namespace TetrisGame
         /// <param name="g"></param>
         public void drawSquares(Graphics g)
         {
+            int j = 0;
             foreach (Square[] square in immovableSquares)
             {
                 for (int i = 0; i < square.Length; i++)
                 {
                     if (square[i] != null)
                     {
-                        square[i].Draw(g);
+                        if (square[i].Y != j) //promena na redicite pri brishenje
+                        {
+                            square[i].Y = j;
+                        }
+                        square[i].Draw(g, this.Location);
                     }
                 }
+                j++;
             }
         }
     }

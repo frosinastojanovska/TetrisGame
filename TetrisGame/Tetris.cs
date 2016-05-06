@@ -95,6 +95,7 @@ namespace TetrisGame
         private void timer_Tick(object sender, EventArgs e)
         {
             updateTime();
+            box.move(Direction.Down);
         }
         /// <summary>
         /// Updates the time of the game.
