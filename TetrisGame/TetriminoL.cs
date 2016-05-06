@@ -60,10 +60,5 @@ namespace TetrisGame
                 state = 1;
             }
         }
-
-        public override bool canCreate()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

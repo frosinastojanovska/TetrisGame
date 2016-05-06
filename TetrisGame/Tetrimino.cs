@@ -129,7 +129,14 @@ namespace TetrisGame
         /// Checks if there is enough space at the top of the board to add the new tetrimino.
         /// </summary>
         /// <returns></returns>
-        public abstract bool canCreate();
+        public bool canCreate(List<Square[]> immovableSquares)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if (!s[i].safe(immovableSquares)) return false;
+            }
+            return true;
+        }
 
 
         /// <summary>

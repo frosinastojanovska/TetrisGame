@@ -21,15 +21,62 @@ namespace TetrisGame
             s[3].Y = Y + 1;
 
         }
-
-        public override bool canCreate()
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public override void rotate(List<Square[]> boardSquares)
         {
-            throw new NotImplementedException();
+            //state 1 -> state 2
+            if (state == 1)
+            {
+                s[0].X += 2;
+
+                s[1].X += 1;
+                s[1].Y += 1;
+
+                s[3].X -= 1;
+                s[3].Y += 1;
+
+                state = 2;
+            }
+            //state 2 -> state 3
+            if (state == 2)
+            {
+                s[0].Y += 2;
+
+                s[1].X -= 1;
+                s[1].Y += 1;
+
+                s[3].X -= 1;
+                s[3].Y -= 1;
+
+                state = 3;
+            }
+            //state 3 -> state 4   
+            if (state == 3)
+            {
+                s[0].X -= 2;
+
+                s[1].X -= 1;
+                s[1].Y -= 1;
+
+                s[3].X += 1;
+                s[3].Y -= 1;
+
+                state = 4;
+            }
+
+            //state 4 -> state 1
+            if (state == 4)
+            {
+                s[0].Y -= 2;
+
+                s[1].X += 1;
+                s[1].Y -= 1;
+
+                s[3].X += 1;
+                s[3].Y += 1;
+
+                state = 1;
+            }
         }
     }
 }
