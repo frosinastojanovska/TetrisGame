@@ -220,6 +220,27 @@ namespace TetrisGame
             box.endGame();
             box.startGame();
         }
+
+        private void Tetris_KeyDown(object sender, KeyEventArgs e)
+        {
+            /*if (e.KeyCode == Keys.Right)
+            {
+                box.move(Direction.Right);
+            }
+            else if (e.KeyCode == Keys.Left)
+            {
+                box.move(Direction.Left);
+            }
+            else if (e.KeyCode == Keys.Up)
+            {
+                //rotate
+            }
+            else
+            {
+                //speed up
+            }
+            Invalidate();*/
+        }
     }
 
 

@@ -48,13 +48,13 @@ namespace TetrisGame
             Tetriminoes.Add(4, new TetriminoT());
             Tetriminoes.Add(5, new TetriminoS());
             Tetriminoes.Add(6, new TetriminoZ());
-            createTetrimino(this.CreateGraphics());
+            createTetrimino();
         }
         /// <summary>
         /// Creates the next tetrimino that will fall
         /// </summary>
         /// <param name="g"></param>
-        public void createTetrimino(Graphics g)
+        public void createTetrimino()
         {
             if (nextTetrimino != null)
             {
@@ -127,8 +127,7 @@ namespace TetrisGame
             timer.Interval = 1000;
             currentTetrimino = null;
             nextTetrimino = null;
-            Graphics g = this.CreateGraphics();
-            createTetrimino(g);
+            createTetrimino();
         }
         /// <summary>
         /// Continues the game.
@@ -172,8 +171,23 @@ namespace TetrisGame
 
         private void TetrisBox_KeyDown(object sender, KeyEventArgs e)
         {
-
+            /*if (e.KeyCode == Keys.Right)
+            {
+                move(Direction.Right);
+            }
+            else if (e.KeyCode == Keys.Left)
+            {
+                move(Direction.Left);
+            }
+            else if (e.KeyCode == Keys.Up)
+            {
+                //rotate
+            }
+            else
+            {
+                //speed up
+            }
+            Invalidate();*/
         }
-
     }
 }
