@@ -9,8 +9,6 @@ namespace TetrisGame
     public partial class Tetris : Form
     {
         private TetrisBox box;  // control for the game
-        private Timer timer;  // timer that helps calculate the time that the game is played
-        private int time;  // the time that the game is played
         private DialogBox dialog;  // dialog box
         /// <summary>
         /// Initializes a new instance of the Tetris class.
@@ -24,11 +22,8 @@ namespace TetrisGame
             box.Controls.Add(this.gbScore);
             box.Controls.Add(this.lbLevel);
             box.Controls.Add(this.gbNextTetrimino);
+            box.Controls.Add(this.gbTime);
             this.GamePanel3.Controls.Add(box);
-            timer = new Timer();
-            timer.Interval = 1000;
-            timer.Tick += timer_Tick;
-            time = 0;
             initializeTooltip();
         }
         /// <summary>
@@ -48,7 +43,7 @@ namespace TetrisGame
         /// <param name="view"></param>
         private void changeView(string view)
         {
-            if(view == "menu")
+            if (view == "menu")
             {
                 MenuPanel1.Visible = true;
                 AboutPanel2.Visible = false;
@@ -60,7 +55,8 @@ namespace TetrisGame
                 AboutPanel2.Visible = true;
                 GamePanel3.Visible = false;
             }
-            else if (view == "game"){
+            else if (view == "game")
+            {
                 MenuPanel1.Visible = false;
                 AboutPanel2.Visible = false;
                 GamePanel3.Visible = true;
@@ -88,26 +84,6 @@ namespace TetrisGame
                 changeView("menu");
         }
         /// <summary>
-        ///  Occurs when the timer interval has elapsed and the timer is enabled.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            updateTime();
-            box.move(Direction.Down);
-        }
-        /// <summary>
-        /// Updates the time of the game.
-        /// </summary>
-        private void updateTime()
-        {
-            time = time + 1;
-            int seconds = time % 60;
-            int minutes = time / 60;
-            lbTime.Text = String.Format("{0:00}:{1:00}", minutes, seconds);
-        }
-        /// <summary>
         /// Shows the About view.
         /// </summary>
         /// <param name="sender"></param>
@@ -124,7 +100,6 @@ namespace TetrisGame
         private void btnPlay_Click(object sender, EventArgs e)
         {
             changeView("game");
-            timer.Start();
             box.startGame();
         }
         /// <summary>
@@ -133,7 +108,6 @@ namespace TetrisGame
         private void pauseGame()
         {
             btnPause.BackgroundImage = TetrisGame.Properties.Resources.buttonPlay;
-            timer.Stop();
             box.pauseGame();
         }
         /// <summary>
@@ -142,7 +116,6 @@ namespace TetrisGame
         private void resumeGame()
         {
             btnPause.BackgroundImage = TetrisGame.Properties.Resources.buttonPause;
-            timer.Start();
             box.continueGame();
         }
         /// <summary>
@@ -156,7 +129,7 @@ namespace TetrisGame
             {
                 pauseGame();
             }
-            else   if (box.paused)
+            else if (box.paused)
             {
                 resumeGame();
             }
@@ -190,9 +163,6 @@ namespace TetrisGame
             {
                 changeView("menu");
                 btnPause.BackgroundImage = TetrisGame.Properties.Resources.buttonPause;
-                time = -1;
-                updateTime();
-                timer.Stop();
                 box.endGame();
             }
             else
@@ -215,8 +185,6 @@ namespace TetrisGame
         /// <param name="e"></param>
         private void btnReplay_Click(object sender, EventArgs e)
         {
-            time = -1;
-            updateTime();
             box.endGame();
             box.startGame();
         }

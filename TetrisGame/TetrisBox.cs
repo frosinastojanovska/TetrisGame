@@ -17,15 +17,18 @@ namespace TetrisGame
     /// </summary>
     public class TetrisBox : UserControl
     {
-        public Board board;  // the board where the tetrimino pieces are going to be drawn
-        public Timer timer;  // speed of the faling tetrimino pieces
-        public int level = 1;  // the current level of the player
-        public long score = 0;  // the current score of the player
+        private Board board;  // the board where the tetrimino pieces are going to be drawn
+        private Timer timer;  // timer that helps calculate the time
+        private long time;  // the time that the game is played
+        private int speed;  // the speed that tetriminos are moving down
+        private int level = 1;  // the current level of the player
+        private long score = 0;  // the current score of the player
         public bool playing = false; // indicates the running mode of the game
         public bool paused = false; // indicates the pause mode of the game
         public Tetrimino currentTetrimino;  // tetrimino that moves
         public Tetrimino nextTetrimino;  // next tetrimino that will move
-        public Dictionary<int, Tetrimino> Tetriminoes;
+        public Dictionary<int, Tetrimino> Tetriminoes;  // all possible tetriminos
+        private Graphics graphics;  // graphics of the game
         private static Random random = new Random(); // choose the next tetrimino
         
         /// <summary>
@@ -48,7 +51,36 @@ namespace TetrisGame
             Tetriminoes.Add(4, new TetriminoT());
             Tetriminoes.Add(5, new TetriminoS());
             Tetriminoes.Add(6, new TetriminoZ());
-            createTetrimino();
+            graphics = this.CreateGraphics();
+            //createTetrimino(this.CreateGraphics());
+            timer = new Timer();
+            timer.Interval = 10;
+            timer.Tick += timer_Tick;
+            time = 0;
+        }
+        /// <summary>
+        ///  Occurs when the timer interval has elapsed and the timer is enabled.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            updateTime();
+            if (time % speed == 0)
+                move(Direction.Down);
+        }
+        /// <summary>
+        /// Updates the time of the game.
+        /// </summary>
+        private void updateTime()
+        {
+            time = time + timer.Interval;
+            if (time % 1000 == 0)
+            {
+                long seconds = (time / 1000) % 60;
+                long minutes = (time / 1000) / 60;
+                this.Controls[3].Controls[0].Text = String.Format("{0:00}:{1:00}", minutes, seconds);
+            }
         }
         /// <summary>
         /// Creates the next tetrimino that will fall
@@ -121,10 +153,10 @@ namespace TetrisGame
             paused = false;
             score = 0;
             level = 1;
+            speed = 1000;
             Point location = new Point(this.Location.X + 10, this.Location.Y + 5);
             board = new Board(20, 10, 20, Color.SeaShell, location);
-            timer = new Timer();
-            timer.Interval = 1000;
+            timer.Start();
             currentTetrimino = null;
             nextTetrimino = null;
             createTetrimino();
@@ -155,6 +187,8 @@ namespace TetrisGame
             playing = false;
             paused = false;
             timer.Stop();
+            time = 0;
+            updateTime();
         }
 
         private void InitializeComponent()
