@@ -58,19 +58,25 @@ namespace TetrisGame
             }
         }
 
-        public void moveLeft()
+        public void moveLeft(List<Square[]> boardSquares)
         {
-            for (int i = 0; i < 4; i++)
+            if (safeLeft(boardSquares) == true)
             {
-                s[i].moveLeft();
+                for (int i = 0; i < 4; i++)
+                {
+                    s[i].moveLeft();
+                }
             }
         }
 
-        public void moveRight()
+        public void moveRight(List<Square[]> boardSquares)
         {
-            for (int i = 0; i < 4; i++)
+            if (safeRight(boardSquares) == true)
             {
-                s[i].moveRight();
+                for (int i = 0; i < 4; i++)
+                {
+                    s[i].moveRight();
+                }
             }
         }
 

@@ -108,11 +108,11 @@ namespace TetrisGame
             }
             else if (direction == Direction.Left)
             {
-                currentTetrimino.moveLeft();
+                currentTetrimino.moveLeft(board.immovableSquares);
             }
             else
             {
-                currentTetrimino.moveRight();
+                currentTetrimino.moveRight(board.immovableSquares);
             }
             Invalidate();
         }
