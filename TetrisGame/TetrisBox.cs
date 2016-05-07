@@ -159,6 +159,7 @@ namespace TetrisGame
             currentTetrimino = null;
             nextTetrimino = null;
             createTetrimino();
+            Invalidate();
         }
         /// <summary>
         /// Continues the game.
