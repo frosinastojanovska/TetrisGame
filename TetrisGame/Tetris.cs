@@ -191,7 +191,7 @@ namespace TetrisGame
 
         private void Tetris_KeyDown(object sender, KeyEventArgs e)
         {
-            /*if (e.KeyCode == Keys.Right)
+            if (e.KeyCode == Keys.Right)
             {
                 box.move(Direction.Right);
             }
@@ -207,9 +207,7 @@ namespace TetrisGame
             {
                 //speed up
             }
-            Invalidate();*/
+            Invalidate();
         }
     }
-
-
 }
