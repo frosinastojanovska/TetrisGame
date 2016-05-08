@@ -59,3 +59,4 @@ C:\Users\Toni\Desktop\FaX\c#\VP-Project\TetrisGame\TetrisGame\obj\Debug\TetrisGa
 E:\Life after Hogwarts\Level 2. part 2\VP\Tetris\TetrisGame\TetrisGame\obj\Debug\TetrisGame.TetrisBox.resources
 C:\Users\Frosina\Documents\TetrisGame\TetrisGame\obj\Debug\TetrisGame.TetrisBox.resources
 C:\Users\Frosina\Documents\TetrisGame\TetrisGame\obj\Debug\TetrisGame.HighScore.resources
+C:\Users\Toni\Desktop\FaX\c#\VP-Project\TetrisGame\TetrisGame\obj\Debug\TetrisGame.HighScore.resources

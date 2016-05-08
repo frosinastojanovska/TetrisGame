@@ -275,8 +275,13 @@ namespace TetrisGame
                 tetrimino.rotate(board.immovableSquares);
                 return false;
             }
+            Invalidate();
             return true;
         }
 
+        public void rotate()
+        {
+            safeToRotate(currentTetrimino);
+        }
     }
 }

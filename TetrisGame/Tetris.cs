@@ -201,7 +201,7 @@ namespace TetrisGame
             }
             else if (e.KeyCode == Keys.Up)
             {
-                //rotate
+                box.rotate();
             }
             else if (e.KeyCode == Keys.Down)
             {

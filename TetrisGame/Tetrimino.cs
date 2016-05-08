@@ -156,14 +156,10 @@ namespace TetrisGame
                 {
                     return false;
                 }
-                if (s[i].Y > 0 && boardSquares[s[i].Y + 1][s[i].X] != null)
+                if (s[i].Y >= 0 && boardSquares[s[i].Y + 1][s[i].X] != null)
                 {
                     return false;
                 }
-                /*if(s[i].Y < 0 && boardSquares[boardSquares.Count - 1][s[i].X] != null)
-                {
-                    return false;
-                }*/
             }
             return true;
         }
