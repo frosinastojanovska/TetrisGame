@@ -222,8 +222,10 @@ namespace TetrisGame
             paused = false;
             score = 0;
             update = 0;
-            level = 1;
+            level = 0;
+            updateLevel();
             speed = 1000;
+            updateScore(0);
             Point location = new Point(this.Location.X + 10, this.Location.Y + 5);
             board = new Board(20, 10, 20, Color.SeaShell, location);
             addTetriminos();
@@ -260,9 +262,6 @@ namespace TetrisGame
             paused = false;
             timer.Stop();
             time = 0;
-            update = 0;
-            score = 0;
-            level = 0;
             updateTime();
             if (highScore < score)
                 highScore = score;
