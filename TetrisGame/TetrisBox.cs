@@ -201,8 +201,16 @@ namespace TetrisGame
             if(n != 0 && (update/500) > 0)
             {
                 updateLevel();
-                this.speed -= 100;
+              
+                if(speed > 100)
+                {
+                    this.speed -= 100; 
+                } else if(speed > 0)
+                {
+                    this.speed -= 10;
+                }
                 this.update -= 500;
+
             }
         }
         /// <summary>

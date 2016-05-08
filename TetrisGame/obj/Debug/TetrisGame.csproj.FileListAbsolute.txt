@@ -92,3 +92,5 @@ C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\obj\Debug\TetrisGame.
 C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\obj\Debug\TetrisGame.Tetris.resources
 C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\obj\Debug\TetrisGame.TetrisBox.resources
 C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\obj\Debug\TetrisGame.csproj.GenerateResource.Cache
+E:\Life after Hogwarts\Level 2. part 2\VP\Tetris2\TetrisGame\TetrisGame\obj\Debug\TetrisGame.HighScore.resources
+E:\Life after Hogwarts\Level 2. part 2\VP\Tetris2\TetrisGame\TetrisGame\obj\Debug\TetrisGame.TetrisBox.resources
