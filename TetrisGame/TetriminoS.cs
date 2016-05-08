@@ -9,7 +9,7 @@ namespace TetrisGame
 {
     class TetriminoS : Tetrimino
     {
-        public TetriminoS() : base(Color.Red)
+        public TetriminoS() : base(Color.Tomato)
         {   
             s[1].X = X + 1;
             s[1].Y = Y;

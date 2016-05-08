@@ -44,7 +44,7 @@ namespace TetrisGame
             if (Y >= 0)
             {
                 g.FillRectangle(new SolidBrush(color), location.X + X * size, location.Y + Y * size, size, size);
-                g.DrawRectangle(new Pen(Color.RosyBrown, 2), location.X + X * size, location.Y + Y * size, size, size);
+                g.DrawRectangle(new Pen(Color.Gray, 2), location.X + X * size, location.Y + Y * size, size, size);
             }
         }
 
