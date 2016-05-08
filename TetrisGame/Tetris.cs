@@ -149,6 +149,8 @@ namespace TetrisGame
                 Close();
             else
                 resumeGame();
+
+            this.ActiveControl = null;
         }
         /// <summary>
         /// Ends the game and shows the MainMenu view.
@@ -168,6 +170,8 @@ namespace TetrisGame
             }
             else
                 resumeGame();
+
+            this.ActiveControl = null;
         }
         /// <summary>
         /// Shows the Help/About view.
@@ -178,6 +182,7 @@ namespace TetrisGame
         {
             pauseGame();
             changeView("about");
+            this.ActiveControl = null;
         }
         /// <summary>
         /// Starts a new game.

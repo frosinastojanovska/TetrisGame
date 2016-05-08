@@ -146,19 +146,30 @@ namespace TetrisGame
         private void checkFullRows()
         {
             int sum = 0;
+            HashSet<int> rowsForDeleting = new HashSet<int>();
+
             foreach (Square s in currentTetrimino.s)
             {
                 int y = s.Y;
-                bool flag = true;
+                if (!rowsForDeleting.Contains(y))
+                    rowsForDeleting.Add(y);
+            }
+
+            foreach(int y in rowsForDeleting)
+            {
+                int count = 0;
                 for(int i=0; i < board.Columns; i++)
                 {
                     if (board.immovableSquares[y][i] == null)
                     {
-                        flag = false;
                         break;
                     }
+                    else
+                    {
+                        count++;
+                    }
                 }
-                if (flag)
+                if (count == board.immovableSquares[y].Length)
                 {
                     sum += sum * 2 + 60;
                     board.immovableSquares.RemoveAt(y);
