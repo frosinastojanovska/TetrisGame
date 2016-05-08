@@ -21,7 +21,7 @@ namespace TetrisGame
         public Tetrimino(Color c)
         {
             X = 3;
-            Y = 0;
+            Y = -2;
             color = c;
             state = 1;
 
@@ -64,11 +64,24 @@ namespace TetrisGame
                 s[i].Draw(g, p);
             }
         }
+        /// <summary>
+        /// Checks if the Tetrimino is out of the board 
+        /// </summary>
+        /// <returns></returns>
+        public bool isOut()
+        {
+            foreach(Square square in s)
+            {
+                if (square.Y < 0)
+                    return true;
+            }
+            return false;
+        }
 
         /// <summary>
         /// Move methods: moves the tetrimino down, left or right accordingly.
         /// </summary>
-        public void moveDown(List<Square[]> boardSquares)
+        public bool moveDown(List<Square[]> boardSquares)
         {
             if (safeDown(boardSquares) == true)
             {
@@ -76,7 +89,9 @@ namespace TetrisGame
                 {
                     s[i].moveDown();
                 }
+                return true;
             }
+            return false;
         }
 
         public void moveLeft(List<Square[]> boardSquares)
@@ -112,7 +127,7 @@ namespace TetrisGame
                 {
                     return false;
                 }
-                if (boardSquares[s[i].Y][s[i].X - 1] != null)
+                if (s[i].Y > 0 && boardSquares[s[i].Y][s[i].X - 1] != null)
                 {
                     return false;
                 }
@@ -143,7 +158,7 @@ namespace TetrisGame
                 {
                     return false;
                 }
-                if (boardSquares[s[i].Y + 1][s[i].X] != null)
+                if (s[i].Y > 0 && boardSquares[s[i].Y + 1][s[i].X] != null)
                 {
                     return false;
                 }

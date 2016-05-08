@@ -40,8 +40,11 @@ namespace TetrisGame
 
         public void Draw(Graphics g, Point location)
         {
-            g.FillRectangle(new SolidBrush(color), location.X + X * size, location.Y + Y * size, size, size);
-            g.DrawRectangle(new Pen(Color.RosyBrown, 2), location.X + X * size, location.Y + Y * size, size, size);
+            if (Y >= 0)
+            {
+                g.FillRectangle(new SolidBrush(color), location.X + X * size, location.Y + Y * size, size, size);
+                g.DrawRectangle(new Pen(Color.RosyBrown, 2), location.X + X * size, location.Y + Y * size, size, size);
+            }
         }
 
         public void moveDown()

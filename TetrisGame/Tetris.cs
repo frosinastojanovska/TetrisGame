@@ -203,9 +203,9 @@ namespace TetrisGame
             {
                 //rotate
             }
-            else
+            else if (e.KeyCode == Keys.Down)
             {
-                //speed up
+                box.move(Direction.Down);
             }
             Invalidate();
         }

@@ -62,6 +62,14 @@ namespace TetrisGame
             }
   
         }*/
+
+        public void addSquares(Tetrimino t)
+        {
+            foreach(Square s in t.s)
+            {
+                immovableSquares[s.Y][s.X] = s;
+            }
+        }
         
         /// <summary>
         /// Draws the board.

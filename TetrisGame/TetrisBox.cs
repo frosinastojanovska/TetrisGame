@@ -43,6 +43,18 @@ namespace TetrisGame
             this.Location = p;
             this.Width = width;
             this.Height = height;
+            addTetriminos();
+            graphics = this.CreateGraphics();
+            timer = new Timer();
+            timer.Interval = 10;
+            timer.Tick += timer_Tick;
+            time = 0;
+        }
+        /// <summary>
+        /// Adds all possible tetriminos in the dictionary Tetriminos
+        /// </summary>
+        private void addTetriminos()
+        {
             Tetriminoes = new Dictionary<int, Tetrimino>();
             Tetriminoes.Add(0, new TetriminoO());
             Tetriminoes.Add(1, new TetriminoI());
@@ -51,11 +63,6 @@ namespace TetrisGame
             Tetriminoes.Add(4, new TetriminoT());
             Tetriminoes.Add(5, new TetriminoS());
             Tetriminoes.Add(6, new TetriminoZ());
-            graphics = this.CreateGraphics();
-            timer = new Timer();
-            timer.Interval = 10;
-            timer.Tick += timer_Tick;
-            time = 0;
         }
         /// <summary>
         ///  Occurs when the timer interval has elapsed and the timer is enabled.
@@ -104,7 +111,18 @@ namespace TetrisGame
         {
             if (direction == Direction.Down)
             {
-                currentTetrimino.moveDown(board.immovableSquares);
+                if (!currentTetrimino.moveDown(board.immovableSquares))
+                {
+                    if (currentTetrimino.isOut())
+                        endGame();
+                    else
+                    {
+                        board.addSquares(currentTetrimino);
+                        checkFullRows();
+                        createTetrimino();
+                    }
+
+                }
             }
             else if (direction == Direction.Left)
             {
@@ -115,6 +133,36 @@ namespace TetrisGame
                 currentTetrimino.moveRight(board.immovableSquares);
             }
             Invalidate();
+        }
+        /// <summary>
+        /// Looks for full rows
+        /// </summary>
+        private void checkFullRows()
+        {
+            int sum = 0;
+            foreach (Square s in currentTetrimino.s)
+            {
+                int x = s.X;
+                bool flag = true;
+                for(int i=0; i < board.Columns; i++)
+                {
+                    if (board.immovableSquares[x][i] == null)
+                    {
+                        flag = false;
+                        break;
+                    }
+                    else
+                    {
+                        sum += sum * 2 + 60;
+                    }
+                }
+                if (flag)
+                {
+                    board.immovableSquares.RemoveAt(x);
+                    board.immovableSquares.Insert(0, new Square[board.Columns]);
+                }
+            }
+            updateScore(sum);
         }
         /// <summary>
         /// Overriding the OnPaint method of the class System.Windows.Forms.
@@ -155,6 +203,7 @@ namespace TetrisGame
             speed = 1000;
             Point location = new Point(this.Location.X + 10, this.Location.Y + 5);
             board = new Board(20, 10, 20, Color.SeaShell, location);
+            addTetriminos();
             timer.Start();
             currentTetrimino = null;
             nextTetrimino = null;
@@ -198,30 +247,8 @@ namespace TetrisGame
             // TetrisBox
             // 
             this.Name = "TetrisBox";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TetrisBox_KeyDown);
             this.ResumeLayout(false);
 
-        }
-
-        private void TetrisBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            /*if (e.KeyCode == Keys.Right)
-            {
-                move(Direction.Right);
-            }
-            else if (e.KeyCode == Keys.Left)
-            {
-                move(Direction.Left);
-            }
-            else if (e.KeyCode == Keys.Up)
-            {
-                //rotate
-            }
-            else
-            {
-                //speed up
-            }
-            Invalidate();*/
         }
 
         public bool safeToRotate(Tetrimino tetrimino)
