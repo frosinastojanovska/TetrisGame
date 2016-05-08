@@ -81,7 +81,7 @@ namespace TetrisGame
         /// <summary>
         /// Move methods: moves the tetrimino down, left or right accordingly.
         /// </summary>
-        public bool moveDown(List<Square[]> boardSquares)
+        public void moveDown(List<Square[]> boardSquares)
         {
             if (safeDown(boardSquares) == true)
             {
@@ -89,9 +89,7 @@ namespace TetrisGame
                 {
                     s[i].moveDown();
                 }
-                return true;
             }
-            return false;
         }
 
         public void moveLeft(List<Square[]> boardSquares)
@@ -162,7 +160,10 @@ namespace TetrisGame
                 {
                     return false;
                 }
-
+                /*if(s[i].Y < 0 && boardSquares[boardSquares.Count - 1][s[i].X] != null)
+                {
+                    return false;
+                }*/
             }
             return true;
         }

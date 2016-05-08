@@ -23,6 +23,7 @@ namespace TetrisGame
         private int speed;  // the speed that tetriminos are moving down
         private int level = 1;  // the current level of the player
         private long score = 0;  // the current score of the player
+        private long highScore = 0; // the highest score of the player
         public bool playing = false; // indicates the running mode of the game
         public bool paused = false; // indicates the pause mode of the game
         public Tetrimino currentTetrimino;  // tetrimino that moves
@@ -111,17 +112,22 @@ namespace TetrisGame
         {
             if (direction == Direction.Down)
             {
-                if (!currentTetrimino.moveDown(board.immovableSquares))
+                if (!currentTetrimino.safeDown(board.immovableSquares))
                 {
                     if (currentTetrimino.isOut())
                         endGame();
                     else
                     {
                         board.addSquares(currentTetrimino);
+                        addTetriminos();
                         checkFullRows();
                         createTetrimino();
                     }
 
+                }
+                else
+                {
+                    currentTetrimino.moveDown(board.immovableSquares);
                 }
             }
             else if (direction == Direction.Left)
@@ -238,6 +244,12 @@ namespace TetrisGame
             timer.Stop();
             time = 0;
             updateTime();
+            if (highScore < score)
+                highScore = score;
+            HighScore dialog = new HighScore(highScore, score);
+            DialogResult result = dialog.ShowDialog();
+            if (result == DialogResult.OK)
+                startGame();
         }
 
         private void InitializeComponent()
