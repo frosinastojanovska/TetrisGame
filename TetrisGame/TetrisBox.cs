@@ -23,6 +23,7 @@ namespace TetrisGame
         private int speed;  // the speed that tetriminos are moving down
         private int level = 1;  // the current level of the player
         private long score = 0;  // the current score of the player
+        private int update = 0;  // indicates when the level is going to be incremented
         private long highScore = 0; // the highest score of the player
         public bool playing = false; // indicates the running mode of the game
         public bool paused = false; // indicates the pause mode of the game
@@ -146,7 +147,7 @@ namespace TetrisGame
         private void checkFullRows()
         {
             int sum = 0;
-            HashSet<int> rowsForDeleting = new HashSet<int>();
+            List<int> rowsForDeleting = new List<int>();
 
             foreach (Square s in currentTetrimino.s)
             {
@@ -154,7 +155,7 @@ namespace TetrisGame
                 if (!rowsForDeleting.Contains(y))
                     rowsForDeleting.Add(y);
             }
-
+            rowsForDeleting.Sort();
             foreach(int y in rowsForDeleting)
             {
                 int count = 0;
@@ -195,7 +196,14 @@ namespace TetrisGame
         private void updateScore(int n)
         {
             score += n;
+            update += n;
             this.Controls[0].Controls[0].Text = score.ToString();  // change the score in the label
+            if(n != 0 && (update/500) > 0)
+            {
+                updateLevel();
+                this.speed -= 100;
+                this.update -= 500;
+            }
         }
         /// <summary>
         /// Increments the level of the game.
@@ -213,6 +221,7 @@ namespace TetrisGame
             playing = true;
             paused = false;
             score = 0;
+            update = 0;
             level = 1;
             speed = 1000;
             Point location = new Point(this.Location.X + 10, this.Location.Y + 5);
@@ -251,6 +260,9 @@ namespace TetrisGame
             paused = false;
             timer.Stop();
             time = 0;
+            update = 0;
+            score = 0;
+            level = 0;
             updateTime();
             if (highScore < score)
                 highScore = score;
