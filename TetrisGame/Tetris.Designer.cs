@@ -52,6 +52,7 @@
             this.gbTime = new System.Windows.Forms.GroupBox();
             this.lbTime = new System.Windows.Forms.Label();
             this.gbNextTetrimino = new System.Windows.Forms.GroupBox();
+            this.nextTetriminoPictureBox = new System.Windows.Forms.PictureBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.MenuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,6 +61,8 @@
             this.GamePanel3.SuspendLayout();
             this.gbScore.SuspendLayout();
             this.gbTime.SuspendLayout();
+            this.gbNextTetrimino.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nextTetriminoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuPanel1
@@ -371,6 +374,7 @@
             // 
             // gbNextTetrimino
             // 
+            this.gbNextTetrimino.Controls.Add(this.nextTetriminoPictureBox);
             this.gbNextTetrimino.Font = new System.Drawing.Font("Cooper Black", 12F);
             this.gbNextTetrimino.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.gbNextTetrimino.Location = new System.Drawing.Point(251, 6);
@@ -379,6 +383,16 @@
             this.gbNextTetrimino.TabIndex = 4;
             this.gbNextTetrimino.TabStop = false;
             this.gbNextTetrimino.Text = "Next ";
+            // 
+            // nextTetriminoPictureBox
+            // 
+            this.nextTetriminoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.nextTetriminoPictureBox.Location = new System.Drawing.Point(10, 26);
+            this.nextTetriminoPictureBox.Name = "nextTetriminoPictureBox";
+            this.nextTetriminoPictureBox.Size = new System.Drawing.Size(140, 80);
+            this.nextTetriminoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.nextTetriminoPictureBox.TabIndex = 0;
+            this.nextTetriminoPictureBox.TabStop = false;
             // 
             // Tetris
             // 
@@ -408,6 +422,8 @@
             this.gbScore.PerformLayout();
             this.gbTime.ResumeLayout(false);
             this.gbTime.PerformLayout();
+            this.gbNextTetrimino.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nextTetriminoPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -437,6 +453,7 @@
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Button btnReplay;
         private System.Windows.Forms.Button btnHelp;
+        private System.Windows.Forms.PictureBox nextTetriminoPictureBox;
     }
 }
 

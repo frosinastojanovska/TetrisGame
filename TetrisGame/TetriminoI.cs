@@ -9,7 +9,7 @@ namespace TetrisGame
 {
     class TetriminoI : Tetrimino
     {
-        public TetriminoI() : base(Color.Aqua)
+        public TetriminoI() : base(Color.Aqua, TetrisGame.Properties.Resources.TetriminoI)
         {
             s[1].X = X;
             s[1].Y = Y + 1;

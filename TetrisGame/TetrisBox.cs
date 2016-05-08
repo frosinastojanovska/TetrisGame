@@ -105,6 +105,9 @@ namespace TetrisGame
                 currentTetrimino = Tetriminoes[random.Next(7)];
             }
             nextTetrimino = Tetriminoes[random.Next(7)];
+            this.Controls[2].Controls[0].BackgroundImage = nextTetrimino.tetriminoImage;
+            //this.Controls[2].Controls[0].Width = nextTetrimino.tetriminoImage.Width;
+            //this.Controls[2].Controls[0].Height = nextTetrimino.tetriminoImage.Height;
         }
         /// <summary>
         /// Moves the current tetrimino down, left or right

@@ -17,13 +17,15 @@ namespace TetrisGame
         public int Y { get; set; }
         public Color color { get; set; }
         public int state { get; set; }
+        public Image tetriminoImage { get; set; }
 
-        public Tetrimino(Color c)
+        public Tetrimino(Color c, Image image)
         {
             X = 3;
             Y = -2;
             color = c;
             state = 1;
+            tetriminoImage = image;
 
             s = new Square[4];
             for(int i=0; i<4; i++)
@@ -41,6 +43,7 @@ namespace TetrisGame
             Y = t.Y;
             color = t.color;
             state = t.state;
+            tetriminoImage = t.tetriminoImage;
 
             s = new Square[4];
 
