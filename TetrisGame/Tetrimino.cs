@@ -123,7 +123,7 @@ namespace TetrisGame
                 {
                     return false;
                 }
-                if (s[i].Y >= 0 && boardSquares[s[i].Y][s[i].X - 1] != null)
+                if (s[i].Y >= 0 && s[i].Y < boardSquares.Count() && boardSquares[s[i].Y][s[i].X - 1] != null)
                 {
                     return false;
                 }
@@ -138,7 +138,7 @@ namespace TetrisGame
                 {
                     return false;
                 }
-                if (s[i].Y >= 0 && boardSquares[s[i].Y][s[i].X + 1] != null)
+                if (s[i].Y >= 0 && s[i].Y < boardSquares.Count() && boardSquares[s[i].Y][s[i].X + 1] != null)
                 {
                     return false;
                 }
@@ -154,7 +154,7 @@ namespace TetrisGame
                 {
                     return false;
                 }
-                if (s[i].Y >= 0 && boardSquares[s[i].Y + 1][s[i].X] != null)
+                if (s[i].Y >= 0 && s[i].Y < boardSquares.Count() && boardSquares[s[i].Y + 1][s[i].X] != null)
                 {
                     return false;
                 }
