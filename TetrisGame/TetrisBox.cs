@@ -157,13 +157,10 @@ namespace TetrisGame
                         flag = false;
                         break;
                     }
-                    else
-                    {
-                        sum += sum * 2 + 60;
-                    }
                 }
                 if (flag)
                 {
+                    sum += sum * 2 + 60;
                     board.immovableSquares.RemoveAt(y);
                     board.immovableSquares.Insert(0, new Square[board.Columns]);
                 }
