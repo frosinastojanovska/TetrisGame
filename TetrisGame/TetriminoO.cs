@@ -27,7 +27,7 @@ namespace TetrisGame
         
         public override void rotate(List<Square[]> boardSquares)
         {
-
+            //this tetrimino does not rotate
         }
     }
 }

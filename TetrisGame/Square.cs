@@ -15,9 +15,10 @@ namespace TetrisGame
         public Color color { get; set; }
         public bool canMove { get; set; }
 
-        public Square()
+        public Square(Color c)
         {
             canMove = true;
+            color = c;
         }
 
         public Square(int x, int y, Color c)

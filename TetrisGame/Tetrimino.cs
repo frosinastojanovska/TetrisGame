@@ -28,8 +28,7 @@ namespace TetrisGame
             s = new Square[4];
             for(int i=0; i<4; i++)
             {
-                s[i] = new Square();
-                s[i].color = c;
+                s[i] = new Square(c);
             }
 
             s[0].X = X;
@@ -47,8 +46,7 @@ namespace TetrisGame
 
             for (int i = 0; i < 4; i++)
             {
-                s[i] = new Square();
-                s[i].color = color;
+                s[i] = new Square(color);
 
                 s[i].X = t.s[i].X;
                 s[i].Y = t.s[i].Y;
