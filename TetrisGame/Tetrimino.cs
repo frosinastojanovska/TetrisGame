@@ -125,7 +125,7 @@ namespace TetrisGame
                 {
                     return false;
                 }
-                if (s[i].Y > 0 && boardSquares[s[i].Y][s[i].X - 1] != null)
+                if (s[i].Y >= 0 && boardSquares[s[i].Y][s[i].X - 1] != null)
                 {
                     return false;
                 }
@@ -140,7 +140,7 @@ namespace TetrisGame
                 {
                     return false;
                 }
-                if (s[i].Y > 0 && boardSquares[s[i].Y][s[i].X + 1] != null)
+                if (s[i].Y >= 0 && boardSquares[s[i].Y][s[i].X + 1] != null)
                 {
                     return false;
                 }

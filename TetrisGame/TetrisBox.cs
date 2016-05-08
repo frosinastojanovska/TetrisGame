@@ -119,8 +119,8 @@ namespace TetrisGame
                     else
                     {
                         board.addSquares(currentTetrimino);
-                        addTetriminos();
                         checkFullRows();
+                        addTetriminos();
                         createTetrimino();
                     }
 
@@ -148,11 +148,11 @@ namespace TetrisGame
             int sum = 0;
             foreach (Square s in currentTetrimino.s)
             {
-                int x = s.X;
+                int y = s.Y;
                 bool flag = true;
                 for(int i=0; i < board.Columns; i++)
                 {
-                    if (board.immovableSquares[x][i] == null)
+                    if (board.immovableSquares[y][i] == null)
                     {
                         flag = false;
                         break;
@@ -164,7 +164,7 @@ namespace TetrisGame
                 }
                 if (flag)
                 {
-                    board.immovableSquares.RemoveAt(x);
+                    board.immovableSquares.RemoveAt(y);
                     board.immovableSquares.Insert(0, new Square[board.Columns]);
                 }
             }
