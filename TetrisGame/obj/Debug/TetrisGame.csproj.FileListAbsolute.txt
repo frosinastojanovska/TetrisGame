@@ -72,3 +72,23 @@ E:\Life after Hogwarts\Level 2. part 2\VP\Tetris3\TetrisGame\TetrisGame\obj\Debu
 E:\Life after Hogwarts\Level 2. part 2\VP\Tetris3\TetrisGame\TetrisGame\obj\Debug\TetrisGame.Tetris.resources
 E:\Life after Hogwarts\Level 2. part 2\VP\Tetris3\TetrisGame\TetrisGame\obj\Debug\TetrisGame.TetrisBox.resources
 E:\Life after Hogwarts\Level 2. part 2\VP\Tetris3\TetrisGame\TetrisGame\obj\Debug\TetrisGame.csproj.GenerateResource.Cache
+C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\bin\Debug\TetrisGame.exe.config
+C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\obj\Debug\TetrisGame.exe
+C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\obj\Debug\TetrisGame.pdb
+C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\bin\Debug\TetrisGame.exe
+C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\bin\Debug\TetrisGame.pdb
+C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\bin\Debug\mscorlib.dll
+C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\bin\Debug\System.Net.Http.dll
+C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\bin\Debug\System.Net.Http.xml
+C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\bin\Debug\normidna.nlp
+C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\bin\Debug\normnfc.nlp
+C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\bin\Debug\normnfd.nlp
+C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\bin\Debug\normnfkc.nlp
+C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\bin\Debug\normnfkd.nlp
+C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\obj\Debug\TetrisGame.csprojResolveAssemblyReference.cache
+C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\obj\Debug\TetrisGame.HighScore.resources
+C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\obj\Debug\TetrisGame.DialogBox.resources
+C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\obj\Debug\TetrisGame.Properties.Resources.resources
+C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\obj\Debug\TetrisGame.Tetris.resources
+C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\obj\Debug\TetrisGame.TetrisBox.resources
+C:\Users\Toni\Desktop\FaX\c#\Project\TetrisGame\TetrisGame\obj\Debug\TetrisGame.csproj.GenerateResource.Cache

@@ -133,6 +133,7 @@ namespace TetrisGame
             {
                 resumeGame();
             }
+            this.ActiveControl = null;
         }
         /// <summary>
         /// Quits the game and closes the application.
@@ -187,27 +188,30 @@ namespace TetrisGame
         {
             box.endGame();
             box.startGame();
+            this.ActiveControl = null;
         }
 
         private void Tetris_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Right)
+            if (box.playing)
             {
-                box.move(Direction.Right);
+                if (e.KeyCode == Keys.Right)
+                {
+                    box.move(Direction.Right);
+                }
+                else if (e.KeyCode == Keys.Left)
+                {
+                    box.move(Direction.Left);
+                }
+                else if (e.KeyCode == Keys.Up)
+                {
+                    box.rotate();
+                }
+                else if (e.KeyCode == Keys.Down)
+                {
+                    box.move(Direction.Down);
+                }
             }
-            else if (e.KeyCode == Keys.Left)
-            {
-                box.move(Direction.Left);
-            }
-            else if (e.KeyCode == Keys.Up)
-            {
-                box.rotate();
-            }
-            else if (e.KeyCode == Keys.Down)
-            {
-                box.move(Direction.Down);
-            }
-            Invalidate();
         }
     }
 }
