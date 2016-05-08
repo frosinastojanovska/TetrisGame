@@ -36,6 +36,27 @@ namespace TetrisGame
             s[0].Y = Y;
         }
 
+        public Tetrimino(Tetrimino t)
+        {
+            X = t.X;
+            Y = t.Y;
+            color = t.color;
+            state = t.state;
+
+            s = new Square[4];
+
+            for (int i = 0; i < 4; i++)
+            {
+                s[i] = new Square();
+                s[i].color = color;
+
+                s[i].X = t.s[i].X;
+                s[i].Y = t.s[i].Y;
+            }
+
+        }
+
+
         public void Draw(Graphics g, Point p)
         {
            for(int i=0; i<4; i++)

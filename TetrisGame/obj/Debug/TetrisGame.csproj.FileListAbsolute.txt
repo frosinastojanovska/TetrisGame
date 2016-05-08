@@ -56,3 +56,4 @@ E:\Life after Hogwarts\Level 2. part 2\VP\Tetris2\TetrisGame\TetrisGame\obj\Debu
 E:\Life after Hogwarts\Level 2. part 2\VP\Tetris2\TetrisGame\TetrisGame\obj\Debug\TetrisGame.Tetris.resources
 E:\Life after Hogwarts\Level 2. part 2\VP\Tetris2\TetrisGame\TetrisGame\obj\Debug\TetrisGame.csproj.GenerateResource.Cache
 C:\Users\Toni\Desktop\FaX\c#\VP-Project\TetrisGame\TetrisGame\obj\Debug\TetrisGame.TetrisBox.resources
+E:\Life after Hogwarts\Level 2. part 2\VP\Tetris\TetrisGame\TetrisGame\obj\Debug\TetrisGame.TetrisBox.resources

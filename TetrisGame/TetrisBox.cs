@@ -223,5 +223,21 @@ namespace TetrisGame
             }
             Invalidate();*/
         }
+
+        public bool safeToRotate(Tetrimino tetrimino)
+        {
+            //  Tetrimino t = new Tetrimino(tetrimino);
+
+            tetrimino.rotate(board.immovableSquares);
+            if (!tetrimino.safe(board.immovableSquares))
+            {
+                tetrimino.rotate(board.immovableSquares);
+                tetrimino.rotate(board.immovableSquares);
+                tetrimino.rotate(board.immovableSquares);
+                return false;
+            }
+            return true;
+        }
+
     }
 }
