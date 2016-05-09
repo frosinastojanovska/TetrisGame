@@ -10,7 +10,8 @@ namespace TetrisGame
     {
         private TetrisBox box;  // control for the game
         private DialogBox dialog;  // dialog box
-        public static readonly System.Media.SoundPlayer AUDIO = new System.Media.SoundPlayer(TetrisGame.Properties.Resources.moveSound);
+        private static readonly System.Media.SoundPlayer AUDIO = new System.Media.SoundPlayer(TetrisGame.Properties.Resources.moveSound);
+        private bool sound;
         /// <summary>
         /// Initializes a new instance of the Tetris class.
         /// </summary>
@@ -26,6 +27,7 @@ namespace TetrisGame
             box.Controls.Add(this.gbTime);
             this.GamePanel3.Controls.Add(box);
             initializeTooltip();
+            sound = true;
         }
         /// <summary>
         /// Sets tooltips to buttons.
@@ -196,6 +198,36 @@ namespace TetrisGame
             box.startGame();
             this.ActiveControl = null;
         }
+        /// <summary>
+        /// Turns off or turn on the sound
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSound_Click(object sender, EventArgs e)
+        {
+            if (sound)
+            {
+                btnSound.BackgroundImage = Properties.Resources.soundOffButton;
+                sound = false;
+            }
+            else 
+            {
+                btnSound.BackgroundImage = Properties.Resources.soundOnButton;
+                sound = true;
+            }
+            this.ActiveControl = null;
+        }
+        /// <summary>
+        /// Plays sound.
+        /// </summary>
+        private void playSound()
+        {
+            if (sound)
+            {
+                AUDIO.Stop();
+                AUDIO.Play();
+            }
+        }
 
         private void Tetris_KeyDown(object sender, KeyEventArgs e)
         {
@@ -203,26 +235,22 @@ namespace TetrisGame
             {
                 if (e.KeyCode == Keys.Right)
                 {
-                    AUDIO.Stop();
-                    AUDIO.Play();
+                    playSound();
                     box.move(Direction.Right);
                 }
                 else if (e.KeyCode == Keys.Left)
                 {
-                    AUDIO.Stop();
-                    AUDIO.Play();
+                    playSound();
                     box.move(Direction.Left);
                 }
                 else if (e.KeyCode == Keys.Up)
                 {
-                    AUDIO.Stop();
-                    AUDIO.Play();
+                    playSound();
                     box.rotate();
                 }
                 else if (e.KeyCode == Keys.Down)
                 {
-                    //Tetris.AUDIO.Stop();
-                    //Tetris.AUDIO.Play();
+                    //playSound();
                     box.move(Direction.Down);
                 }
             }

@@ -192,7 +192,7 @@
         AAEAAAD/////AQAAAAAAAAAEAQAAABZTeXN0ZW0uSU8uTWVtb3J5U3RyZWFtCgAAAAdfYnVmZmVyB19v
         cmlnaW4JX3Bvc2l0aW9uB19sZW5ndGgJX2NhcGFjaXR5C19leHBhbmRhYmxlCV93cml0YWJsZQpfZXhw
         b3NhYmxlB19pc09wZW4dTWFyc2hhbEJ5UmVmT2JqZWN0K19faWRlbnRpdHkHAAAAAAAAAAACAggICAgB
-        AQEBCQIAAAAAAAAAAAAAAKxFAACsRQAAAAEAAQoPAgAAAKxFAAACUklGRqRFAABXQVZFZm10IBAAAAAB
+        AQEBCQIAAAAAAAAArEUAAKxFAACsRQAAAAEAAQoPAgAAAKxFAAACUklGRqRFAABXQVZFZm10IBAAAAAB
         AAIARKwAABCxAgAEABAAZGF0YYBFAADxAPEAWQJZAuED4QOaBZoFgweDB5IJkgmvC68Lug26DYoPig/3
         EPcQ2xHbER0SHRKZEZkRdBB0EMsOyw7HDMcMlAqUClsIWwg+Bj4GUgRSBJkCmQIKAQoBjv+O/wj+CP5a
         /Fr8b/pv+j74PvjQ9dD1PvM+87DwsPA27jbuHOwc7IjqiOqP6Y/p7ent6SDrIOv27PbsPe8978TxxPFd
@@ -491,5 +491,11 @@
         /xf/CP8I/yr/Kv9L/0v/av9q/4f/h/+j/6P/vP+8/9P/0//p/+n//P/8/w4ADgAeAB4AKwArADcANwBB
         AEEASQBJAE8ATwBTAFMAVQBVAEwATAA8ADwALQAtACEAIQAXABcADgAOAAgACAADAAMAAQABAAs=
 </value>
+  </data>
+  <data name="soundOffButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\soundOffButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="soundOnButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\soundOnButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

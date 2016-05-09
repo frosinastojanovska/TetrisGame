@@ -39,6 +39,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.GamePanel3 = new System.Windows.Forms.Panel();
+            this.btnSound = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
             this.btnReplay = new System.Windows.Forms.Button();
             this.btnPause = new System.Windows.Forms.Button();
@@ -174,6 +175,7 @@
             // 
             // GamePanel3
             // 
+            this.GamePanel3.Controls.Add(this.btnSound);
             this.GamePanel3.Controls.Add(this.btnHelp);
             this.GamePanel3.Controls.Add(this.btnReplay);
             this.GamePanel3.Controls.Add(this.btnPause);
@@ -190,6 +192,25 @@
             this.GamePanel3.Size = new System.Drawing.Size(429, 435);
             this.GamePanel3.TabIndex = 0;
             // 
+            // btnSound
+            // 
+            this.btnSound.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnSound.BackgroundImage = global::TetrisGame.Properties.Resources.soundOnButton;
+            this.btnSound.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSound.FlatAppearance.BorderSize = 0;
+            this.btnSound.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnSound.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnSound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSound.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSound.ForeColor = System.Drawing.Color.DimGray;
+            this.btnSound.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSound.Location = new System.Drawing.Point(230, 401);
+            this.btnSound.Name = "btnSound";
+            this.btnSound.Size = new System.Drawing.Size(31, 30);
+            this.btnSound.TabIndex = 15;
+            this.btnSound.UseVisualStyleBackColor = false;
+            this.btnSound.Click += new System.EventHandler(this.btnSound_Click);
+            // 
             // btnHelp
             // 
             this.btnHelp.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -202,7 +223,7 @@
             this.btnHelp.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHelp.ForeColor = System.Drawing.Color.DimGray;
             this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelp.Location = new System.Drawing.Point(310, 344);
+            this.btnHelp.Location = new System.Drawing.Point(322, 343);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Size = new System.Drawing.Size(38, 41);
             this.btnHelp.TabIndex = 14;
@@ -221,7 +242,7 @@
             this.btnReplay.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReplay.ForeColor = System.Drawing.Color.DimGray;
             this.btnReplay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReplay.Location = new System.Drawing.Point(278, 390);
+            this.btnReplay.Location = new System.Drawing.Point(297, 390);
             this.btnReplay.Name = "btnReplay";
             this.btnReplay.Size = new System.Drawing.Size(38, 41);
             this.btnReplay.TabIndex = 13;
@@ -240,7 +261,7 @@
             this.btnPause.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPause.ForeColor = System.Drawing.Color.DimGray;
             this.btnPause.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPause.Location = new System.Drawing.Point(251, 344);
+            this.btnPause.Location = new System.Drawing.Point(261, 343);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(38, 41);
             this.btnPause.TabIndex = 12;
@@ -259,7 +280,7 @@
             this.btnMenu.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ForeColor = System.Drawing.Color.DimGray;
             this.btnMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenu.Location = new System.Drawing.Point(369, 344);
+            this.btnMenu.Location = new System.Drawing.Point(379, 344);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(38, 41);
             this.btnMenu.TabIndex = 11;
@@ -292,7 +313,7 @@
             this.btnQuit.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuit.ForeColor = System.Drawing.Color.DimGray;
             this.btnQuit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuit.Location = new System.Drawing.Point(340, 390);
+            this.btnQuit.Location = new System.Drawing.Point(355, 390);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(38, 41);
             this.btnQuit.TabIndex = 9;
@@ -454,6 +475,7 @@
         private System.Windows.Forms.Button btnReplay;
         private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.PictureBox nextTetriminoPictureBox;
+        private System.Windows.Forms.Button btnSound;
     }
 }
 

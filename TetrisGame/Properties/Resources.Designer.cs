@@ -222,6 +222,26 @@ namespace TetrisGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap soundOffButton {
+            get {
+                object obj = ResourceManager.GetObject("soundOffButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap soundOnButton {
+            get {
+                object obj = ResourceManager.GetObject("soundOnButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TetriminoI {
             get {
                 object obj = ResourceManager.GetObject("TetriminoI", resourceCulture);
