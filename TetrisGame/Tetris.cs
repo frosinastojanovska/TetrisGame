@@ -28,6 +28,12 @@ namespace TetrisGame
             this.GamePanel3.Controls.Add(box);
             initializeTooltip();
             sound = true;
+            box.Leave += box_Leave;
+        }
+
+        private void box_Leave(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
         }
         /// <summary>
         /// Sets tooltips to buttons.
@@ -255,6 +261,11 @@ namespace TetrisGame
                     box.move(Direction.Down);
                 }
             }
+        }
+
+        private void Tetris_Leave(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
         }
     }
 }

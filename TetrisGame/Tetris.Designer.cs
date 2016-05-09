@@ -433,6 +433,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tetris";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tetris_KeyDown);
+            this.Leave += new System.EventHandler(this.Tetris_Leave);
             this.MenuPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.AboutPanel2.ResumeLayout(false);
