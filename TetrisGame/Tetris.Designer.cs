@@ -261,7 +261,7 @@
             this.btnPause.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPause.ForeColor = System.Drawing.Color.DimGray;
             this.btnPause.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPause.Location = new System.Drawing.Point(261, 343);
+            this.btnPause.Location = new System.Drawing.Point(268, 344);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(38, 41);
             this.btnPause.TabIndex = 12;
