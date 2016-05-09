@@ -181,15 +181,6 @@ namespace TetrisGame.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream moveSound {
-            get {
-                return ResourceManager.GetStream("moveSound", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap NewGameButton {
@@ -266,6 +257,15 @@ namespace TetrisGame.Properties {
             get {
                 object obj = ResourceManager.GetObject("TetriminoL", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream tetriminoMove {
+            get {
+                return ResourceManager.GetStream("tetriminoMove", resourceCulture);
             }
         }
         

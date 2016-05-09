@@ -10,8 +10,8 @@ namespace TetrisGame
     {
         private TetrisBox box;  // control for the game
         private DialogBox dialog;  // dialog box
-        private static readonly System.Media.SoundPlayer AUDIO = new System.Media.SoundPlayer(TetrisGame.Properties.Resources.moveSound);
-        private bool sound;
+        private static readonly System.Media.SoundPlayer AUDIO = new System.Media.SoundPlayer(TetrisGame.Properties.Resources.tetriminoMove);
+        private static bool sound;
         /// <summary>
         /// Initializes a new instance of the Tetris class.
         /// </summary>
@@ -221,7 +221,7 @@ namespace TetrisGame
         /// <summary>
         /// Plays sound.
         /// </summary>
-        private void playSound()
+        private static void playSound()
         {
             if (sound)
             {
@@ -251,7 +251,7 @@ namespace TetrisGame
                 }
                 else if (e.KeyCode == Keys.Down)
                 {
-                    //playSound();
+                    playSound();
                     box.move(Direction.Down);
                 }
             }
