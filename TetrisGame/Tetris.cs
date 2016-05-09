@@ -39,6 +39,7 @@ namespace TetrisGame
             toolTip.SetToolTip(btnQuit, "Quit/Exit");
             toolTip.SetToolTip(btnReplay, "New Game");
             toolTip.SetToolTip(btnHelp, "Help");
+            toolTip.SetToolTip(btnSound, "Sound Off/On");
         }
         /// <summary>
         /// It is used to switch the view panel in the form.
