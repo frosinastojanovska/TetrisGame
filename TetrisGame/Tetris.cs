@@ -10,6 +10,7 @@ namespace TetrisGame
     {
         private TetrisBox box;  // control for the game
         private DialogBox dialog;  // dialog box
+        public static readonly System.Media.SoundPlayer AUDIO = new System.Media.SoundPlayer(TetrisGame.Properties.Resources.moveSound);
         /// <summary>
         /// Initializes a new instance of the Tetris class.
         /// </summary>
@@ -202,18 +203,26 @@ namespace TetrisGame
             {
                 if (e.KeyCode == Keys.Right)
                 {
+                    AUDIO.Stop();
+                    AUDIO.Play();
                     box.move(Direction.Right);
                 }
                 else if (e.KeyCode == Keys.Left)
                 {
+                    AUDIO.Stop();
+                    AUDIO.Play();
                     box.move(Direction.Left);
                 }
                 else if (e.KeyCode == Keys.Up)
                 {
+                    AUDIO.Stop();
+                    AUDIO.Play();
                     box.rotate();
                 }
                 else if (e.KeyCode == Keys.Down)
                 {
+                    //Tetris.AUDIO.Stop();
+                    //Tetris.AUDIO.Play();
                     box.move(Direction.Down);
                 }
             }

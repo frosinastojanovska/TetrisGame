@@ -161,6 +161,10 @@ namespace TetrisGame
                 {
                     return false;
                 }
+                if (s[i].Y == -1 && boardSquares[0][s[i].X] != null)
+                {
+                    return false;
+                }
             }
             return true;
         }
