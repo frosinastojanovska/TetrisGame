@@ -133,7 +133,7 @@ namespace TetrisGame
         {
             for (int i = 0; i < 4; i++)
             {
-                if (s[i].X < 1)
+                if (s[i].X < 1 || s[i].X > 9)
                 {
                     return false;
                 }
@@ -182,15 +182,14 @@ namespace TetrisGame
 
         public bool safeUp(List<Square[]> boardSquares)
         {
-            for(int i=0; i<4; i++)
+            for (int i = 0; i < 4; i++)
             {
-                if(s[i].Y < 1)
+                if (s[i].Y >= 1)
                 {
-                    return false;
-                }
-                if(s[i].Y >= 0 && s[i].Y < boardSquares.Count() && boardSquares[s[i].Y - 1][s[i].X] != null)
-                {
-                    return false;
+                    if (s[i].Y >= 0 && s[i].Y < boardSquares.Count() && boardSquares[s[i].Y - 1][s[i].X] != null)
+                    {
+                        return false;
+                    }
                 }
             }
             return true;
@@ -223,7 +222,7 @@ namespace TetrisGame
 
             for (int i = 0; i < 4; i++)
             {
-                if (s[i].X < 0)
+                if (s[i].X < 0 || s[i].X > 9)
                 {
                     return false;
                 }
@@ -277,13 +276,12 @@ namespace TetrisGame
 
             for (int i = 0; i < 4; i++)
             {
-                if (s[i].Y < 1)
+                if (s[i].Y >= 1)
                 {
-                    return false;
-                }
-                if (s[i].Y >= 0 && s[i].Y < boardSquares.Count() && boardSquares[s[i].Y][s[i].X] != null)
-                {
-                    return false;
+                    if (s[i].Y >= 0 && s[i].Y < boardSquares.Count() && boardSquares[s[i].Y][s[i].X] != null)
+                    {
+                        return false;
+                    }
                 }
             }
             return true;

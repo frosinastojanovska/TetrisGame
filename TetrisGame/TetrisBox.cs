@@ -295,24 +295,13 @@ namespace TetrisGame
 
         public bool safeToRotate(Tetrimino tetrimino)
         {
-            //  Tetrimino t = new Tetrimino(tetrimino);
 
-            /*  tetrimino.rotate(board.immovableSquares);
-              if (!tetrimino.safe(board.immovableSquares))
-              {
-                  tetrimino.rotate(board.immovableSquares);
-                  tetrimino.rotate(board.immovableSquares);
-                  tetrimino.rotate(board.immovableSquares);
-                  return false;
-              }
-              return true;
-
-
-
-      */
             bool safe = true;
             bool wasMovedLeft = false;
             bool wasMovedDown = false;
+
+
+            //I and T still can't move next to a wall, we need to move inwards twice
 
             tetrimino.rotate(board.immovableSquares);
             if (!tetrimino.safeToRotateLeft(board.immovableSquares))
