@@ -297,15 +297,105 @@ namespace TetrisGame
         {
             //  Tetrimino t = new Tetrimino(tetrimino);
 
+            /*  tetrimino.rotate(board.immovableSquares);
+              if (!tetrimino.safe(board.immovableSquares))
+              {
+                  tetrimino.rotate(board.immovableSquares);
+                  tetrimino.rotate(board.immovableSquares);
+                  tetrimino.rotate(board.immovableSquares);
+                  return false;
+              }
+              return true;
+
+
+
+      */
+            bool safe = true;
+            bool wasMovedLeft = false;
+            bool wasMovedDown = false;
+
             tetrimino.rotate(board.immovableSquares);
-            if (!tetrimino.safe(board.immovableSquares))
+            if (!tetrimino.safeToRotateLeft(board.immovableSquares))
             {
-                tetrimino.rotate(board.immovableSquares);
-                tetrimino.rotate(board.immovableSquares);
-                tetrimino.rotate(board.immovableSquares);
+                if (tetrimino.safeLeft(board.immovableSquares))
+                {
+                    tetrimino.moveLeft(board.immovableSquares);
+                    if (!tetrimino.safeToRotateLeft(board.immovableSquares))
+                    { 
+                        tetrimino.moveRight(board.immovableSquares);
+                        safe = false;
+                    }
+                    else
+                    {
+                        wasMovedLeft = true;
+                    }
+                } else
+                {
+                    safe = false;
+                }
+            } else if (!tetrimino.safeToRotateRight(board.immovableSquares))
+            {
+
+                if (tetrimino.safeRight(board.immovableSquares) && !wasMovedLeft)
+                {
+                    tetrimino.moveRight(board.immovableSquares);
+                    if (!tetrimino.safeToRotateRight(board.immovableSquares))
+                    {
+                        tetrimino.moveLeft(board.immovableSquares);
+                        safe = false;
+                    }
+                } else
+                {
+                    safe = false;
+                }
+            } else if(!tetrimino.safeToRotateDown(board.immovableSquares))
+            {
+                if (tetrimino.safeDown(board.immovableSquares))
+                {
+                    tetrimino.moveDown(board.immovableSquares);
+                    if (!tetrimino.safeToRotateDown(board.immovableSquares))
+                    {
+                        tetrimino.moveUp(board.immovableSquares);
+                        safe = false;
+                    } else
+                    {
+                        wasMovedDown = true;
+                    }
+                } else
+                {
+                    safe = false;
+                }
+            } else if (!tetrimino.safeToRotateUp(board.immovableSquares))
+            {
+                if (tetrimino.safeUp(board.immovableSquares) && !wasMovedDown)
+                {
+                    tetrimino.moveUp(board.immovableSquares);
+                    if (!tetrimino.safeToRotateUp(board.immovableSquares))
+                    {
+                        tetrimino.moveDown(board.immovableSquares);
+                        safe = false;
+                    }
+                } else
+                {
+                    safe = false;
+                }
+            }
+
+            if (!safe)
+            {
+                rotate3(tetrimino);
                 return false;
             }
             return true;
+
+        }
+
+
+        public void rotate3(Tetrimino tetrimino)
+        {
+            tetrimino.rotate(board.immovableSquares);
+            tetrimino.rotate(board.immovableSquares);
+            tetrimino.rotate(board.immovableSquares);
         }
 
         public void rotate()

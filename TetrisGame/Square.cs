@@ -62,5 +62,10 @@ namespace TetrisGame
         {
             X++;
         }
+
+        public void moveUp()
+        {
+            Y--;
+        }
     }
 }

@@ -115,6 +115,17 @@ namespace TetrisGame
             }
         }
 
+        public void moveUp(List<Square[]> boardSquares)
+        {
+            if (safeRight(boardSquares) == true)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    s[i].moveUp();
+                }
+            }
+        }
+
         /// <summary>
         /// Safe methods: define whether the tetrimino can move left, right or down accordingly.
         /// </summary>
@@ -169,6 +180,22 @@ namespace TetrisGame
             return true;
         }
 
+        public bool safeUp(List<Square[]> boardSquares)
+        {
+            for(int i=0; i<4; i++)
+            {
+                if(s[i].Y < 1)
+                {
+                    return false;
+                }
+                if(s[i].Y >= 0 && s[i].Y < boardSquares.Count() && boardSquares[s[i].Y - 1][s[i].X] != null)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         /// <summary>
         /// Checks if there is enough space at the top of the board to add the new tetrimino.
         /// </summary>
@@ -190,11 +217,83 @@ namespace TetrisGame
         {
             return safeLeft(boardSquares) && safeRight(boardSquares) && safeDown(boardSquares);
         }
+        
+        public bool safeToRotateLeft(List<Square[]> boardSquares)
+        {
+
+            for (int i = 0; i < 4; i++)
+            {
+                if (s[i].X < 0)
+                {
+                    return false;
+                }
+                if (s[i].Y >= 0 && s[i].Y < boardSquares.Count() && boardSquares[s[i].Y][s[i].X] != null)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public bool safeToRotateRight(List<Square[]> boardSquares){
+            for (int i = 0; i < 4; i++)
+            {
+                if (s[i].X >= boardSquares[0].Length)
+                {
+                    return false;
+                }
+                if (s[i].Y >= 0 && s[i].Y < boardSquares.Count() && boardSquares[s[i].Y][s[i].X] != null)
+                {
+                    return false;
+                }
+
+            }
+            return true;
+
+        }
+
+
+        public bool safeToRotateDown(List<Square[]> boardSquares){
+            for (int i = 0; i < 4; i++)
+            {
+                if (s[i].Y >= boardSquares.Count)
+                {
+                    return false;
+                }
+                if (s[i].Y >= 0 && s[i].Y < boardSquares.Count() && boardSquares[s[i].Y][s[i].X] != null)
+                {
+                    return false;
+                }
+                if (s[i].Y == -1 && boardSquares[0][s[i].X] != null)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public bool safeToRotateUp(List<Square[]> boardSquares)
+        {
+
+            for (int i = 0; i < 4; i++)
+            {
+                if (s[i].Y < 1)
+                {
+                    return false;
+                }
+                if (s[i].Y >= 0 && s[i].Y < boardSquares.Count() && boardSquares[s[i].Y][s[i].X] != null)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
 
         /// <summary>
         /// Method rotate: rotates the tetrimino clockwise if possible.
         /// </summary>
         public abstract void rotate(List<Square[]> boardSquares);
+ 
     }
 
 
