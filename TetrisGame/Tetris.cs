@@ -240,7 +240,7 @@ namespace TetrisGame
         {
             if (box.playing)
             {
-                if (e.KeyCode == Keys.A)
+                if (e.KeyCode == Keys.Right)
                 {
                     playSound();
                     box.move(Direction.Right);

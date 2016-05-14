@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace TetrisGame
@@ -29,7 +30,7 @@ namespace TetrisGame
         /// Rotates the tetrimino.
         /// </summary>
         /// <param name="boardSquares"></param>
-        public override void rotate(List<Square[]> boardSquares)
+        public override void rotate()
         {
             //state 1 -> state 2
             if (state == 1)
@@ -83,6 +84,24 @@ namespace TetrisGame
 
                 state = 1;
             }
+        }
+
+        /// <summary>
+        /// Checks if it can rotate
+        /// </summary>
+        /// <param name="immovableSquares"></param>
+        /// <returns></returns>
+        public override bool tryRotate(List<Square[]> immovableSquares)
+        {
+            Tetrimino t = new TetriminoJ();
+            for (int i = 0; i < 4; i++)
+            {
+                t.s[i].X = this.s[i].X;
+                t.s[i].Y = this.s[i].Y;
+            }
+            t.state = this.state;
+            t.rotate();
+            return t.safe(immovableSquares);
         }
     }
 }

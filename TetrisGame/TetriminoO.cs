@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace TetrisGame
@@ -27,9 +28,15 @@ namespace TetrisGame
             s[3].Y = Y - 1;
         }
         
-        public override void rotate(List<Square[]> boardSquares)
+        public override void rotate()
         {
             //this tetrimino does not rotate
+        }
+
+        public override bool tryRotate(List<Square[]> immovableSquares)
+        {
+            //this tetrimino does not rotate
+            return false;
         }
     }
 }

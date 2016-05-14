@@ -143,6 +143,15 @@ namespace TetrisGame
             Invalidate();
         }
         /// <summary>
+        /// Tries to rotate the falling tetrimino.
+        /// </summary>
+        public void rotate()
+        {
+            if (currentTetrimino.tryRotate(board.immovableSquares))
+                currentTetrimino.rotate();
+            Invalidate();
+        }
+        /// <summary>
         /// Looks for full rows
         /// </summary>
         private void checkFullRows()
@@ -289,109 +298,6 @@ namespace TetrisGame
             this.Name = "TetrisBox";
             this.ResumeLayout(false);
 
-        }
-
-        public bool safeToRotate(Tetrimino tetrimino)
-        {
-
-            bool safe = true;
-            bool wasMovedLeft = false;
-            bool wasMovedDown = false;
-
-
-            //I and T still can't move next to a wall, we need to move inwards twice
-
-            tetrimino.rotate(board.immovableSquares);
-            if (!tetrimino.safeToRotateLeft(board.immovableSquares))
-            {
-                if (tetrimino.safeLeft(board.immovableSquares))
-                {
-                    tetrimino.moveLeft(board.immovableSquares);
-                    if (!tetrimino.safeToRotateLeft(board.immovableSquares))
-                    { 
-                        tetrimino.moveRight(board.immovableSquares);
-                        safe = false;
-                    }
-                    else
-                    {
-                        wasMovedLeft = true;
-                    }
-                } else
-                {
-                    safe = false;
-                }
-            } else if (!tetrimino.safeToRotateRight(board.immovableSquares))
-            {
-
-                if (tetrimino.safeRight(board.immovableSquares) && !wasMovedLeft)
-                {
-                    tetrimino.moveRight(board.immovableSquares);
-                    if (!tetrimino.safeToRotateRight(board.immovableSquares))
-                    {
-                        tetrimino.moveLeft(board.immovableSquares);
-                        safe = false;
-                    }
-                } else
-                {
-                    safe = false;
-                }
-            } else if(!tetrimino.safeToRotateDown(board.immovableSquares))
-            {
-                if (tetrimino.safeDown(board.immovableSquares))
-                {
-                    tetrimino.moveDown(board.immovableSquares);
-                    if (!tetrimino.safeToRotateDown(board.immovableSquares))
-                    {
-                        tetrimino.moveUp(board.immovableSquares);
-                        safe = false;
-                    } else
-                    {
-                        wasMovedDown = true;
-                    }
-                } else
-                {
-                    safe = false;
-                }
-            } else if (!tetrimino.safeToRotateUp(board.immovableSquares))
-            {
-                if (tetrimino.safeUp(board.immovableSquares) && !wasMovedDown)
-                {
-                    tetrimino.moveUp(board.immovableSquares);
-                    if (!tetrimino.safeToRotateUp(board.immovableSquares))
-                    {
-                        tetrimino.moveDown(board.immovableSquares);
-                        safe = false;
-                    }
-                } else
-                {
-                    safe = false;
-                }
-            }
-
-            if (!safe)
-            {
-                rotate3(tetrimino);
-                return false;
-            }
-            return true;
-
-        }
-
-
-        public void rotate3(Tetrimino tetrimino)
-        {
-            tetrimino.rotate(board.immovableSquares);
-            tetrimino.rotate(board.immovableSquares);
-            tetrimino.rotate(board.immovableSquares);
-        }
-
-        public void rotate()
-        {
-            //safeToRotate(currentTetrimino);
-            currentTetrimino.rotate(board.immovableSquares);
-            if (!currentTetrimino.safe(board.immovableSquares))
-                rotate3(currentTetrimino);
-            Invalidate();
         }
     }
 }
