@@ -14,6 +14,7 @@ namespace TetrisGame
         public Color backgroundColor;  // background color of the board
         public Point Location;  // location of the board
         public List<Square[]> immovableSquares;  // container of immovable squares
+
         /// <summary>
         /// Initializes a new instance of the Board class with the specific parameters.
         /// </summary>
@@ -36,6 +37,7 @@ namespace TetrisGame
                 immovableSquares.Add(col);
             }
         }
+
         /// <summary>
         /// Method for adding squares of the tetrimino to the board
         /// </summary>
@@ -60,6 +62,7 @@ namespace TetrisGame
             g.DrawRectangle(pen, this.Location.X, this.Location.Y, this.Columns * this.SquareSize, this.Rows * this.SquareSize);
             drawSquares(g);
         }
+
         /// <summary>
         /// Draws the immovable tetriminoes of the board
         /// </summary>
@@ -73,7 +76,7 @@ namespace TetrisGame
                 {
                     if (square[i] != null)
                     {
-                        if (square[i].Y != j) // update of the row number after deleting rows
+                        if (square[i].Y != j) // update row number after deleting rows
                         {
                             square[i].Y = j;
                         }

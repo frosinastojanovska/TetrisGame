@@ -14,6 +14,7 @@ namespace TetrisGame
             InitializeComponent();
             this.lbMessage.Text = message;
         }
+
         /// <summary>
         /// Sets the DialogResult and closes the form.
         /// </summary>
@@ -24,6 +25,7 @@ namespace TetrisGame
             this.DialogResult = btnOk.DialogResult;
             this.Close();
         }
+
         /// <summary>
         /// Sets the DialogResult and closes the form.
         /// </summary>

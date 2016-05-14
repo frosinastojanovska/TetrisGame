@@ -12,6 +12,7 @@ namespace TetrisGame
         private DialogBox dialog;  // dialog box
         private static readonly System.Media.SoundPlayer AUDIO = new System.Media.SoundPlayer(TetrisGame.Properties.Resources.tetriminoMove);
         private static bool sound;
+
         /// <summary>
         /// Initializes a new instance of the Tetris class.
         /// </summary>
@@ -43,6 +44,7 @@ namespace TetrisGame
             toolTip.SetToolTip(btnHelp, "Help");
             toolTip.SetToolTip(btnSound, "Sound Off/On");
         }
+
         /// <summary>
         /// It is used to switch the view panel in the form.
         /// </summary>
@@ -68,6 +70,7 @@ namespace TetrisGame
                 GamePanel3.Visible = true;
             }
         }
+
         /// <summary>
         /// Exits the application.
         /// </summary>
@@ -77,6 +80,7 @@ namespace TetrisGame
         {
             Close();
         }
+
         /// <summary>
         /// Returns from the About view to the view that was previous shown.
         /// </summary>
@@ -89,6 +93,7 @@ namespace TetrisGame
             else
                 changeView("menu");
         }
+
         /// <summary>
         /// Shows the About view.
         /// </summary>
@@ -98,6 +103,7 @@ namespace TetrisGame
         {
             changeView("about");
         }
+
         /// <summary>
         /// Starts the game.
         /// </summary>
@@ -108,6 +114,7 @@ namespace TetrisGame
             changeView("game");
             box.startGame();
         }
+
         /// <summary>
         /// Pauses the game.
         /// </summary>
@@ -116,6 +123,7 @@ namespace TetrisGame
             btnPause.BackgroundImage = TetrisGame.Properties.Resources.buttonPlay;
             box.pauseGame();
         }
+
         /// <summary>
         /// Resumes the game.
         /// </summary>
@@ -124,6 +132,7 @@ namespace TetrisGame
             btnPause.BackgroundImage = TetrisGame.Properties.Resources.buttonPause;
             box.continueGame();
         }
+
         /// <summary>
         /// Pauses or resumes the game.
         /// </summary>
@@ -141,6 +150,7 @@ namespace TetrisGame
             }
             this.ActiveControl = null;
         }
+
         /// <summary>
         /// Quits the game and closes the application.
         /// </summary>
@@ -155,9 +165,9 @@ namespace TetrisGame
                 Close();
             else
                 resumeGame();
-
             this.ActiveControl = null;
         }
+
         /// <summary>
         /// Ends the game and shows the MainMenu view.
         /// </summary>
@@ -179,6 +189,7 @@ namespace TetrisGame
 
             this.ActiveControl = null;
         }
+
         /// <summary>
         /// Shows the Help/About view.
         /// </summary>
@@ -190,6 +201,7 @@ namespace TetrisGame
             changeView("about");
             this.ActiveControl = null;
         }
+
         /// <summary>
         /// Starts a new game.
         /// </summary>
@@ -201,6 +213,7 @@ namespace TetrisGame
             box.startGame();
             this.ActiveControl = null;
         }
+
         /// <summary>
         /// Turns off or turn on the sound
         /// </summary>
@@ -220,6 +233,7 @@ namespace TetrisGame
             }
             this.ActiveControl = null;
         }
+
         /// <summary>
         /// Plays sound.
         /// </summary>
@@ -231,6 +245,7 @@ namespace TetrisGame
                 AUDIO.Play();
             }
         }
+
         /// <summary>
         /// Catch the event of pressing the arrow keys and move the tetrimino in the game
         /// </summary>

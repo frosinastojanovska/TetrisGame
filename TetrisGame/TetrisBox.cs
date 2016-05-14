@@ -11,6 +11,7 @@ namespace TetrisGame
         Left,
         Right
     }
+
     /// <summary>
     /// A class that represents the logic of the tetris game.
     /// It inherits from the class System.Windows.Forms.UserControl.
@@ -32,7 +33,17 @@ namespace TetrisGame
         public Dictionary<int, Tetrimino> Tetriminoes;  // all possible tetriminos
         private Graphics graphics;  // graphics of the game
         private static Random random = new Random(); // choose the next tetrimino
-        
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // TetrisBox
+            // 
+            this.Name = "TetrisBox";
+            this.ResumeLayout(false);
+        }
+
         /// <summary>
         /// Initializes a new instance of the TetrisBox class with the specific parameters.
         /// </summary>
@@ -52,6 +63,7 @@ namespace TetrisGame
             timer.Tick += timer_Tick;
             time = 0;
         }
+
         /// <summary>
         /// Adds all possible tetriminos in the dictionary Tetriminos
         /// </summary>
@@ -66,6 +78,7 @@ namespace TetrisGame
             Tetriminoes.Add(5, new TetriminoS());
             Tetriminoes.Add(6, new TetriminoZ());
         }
+
         /// <summary>
         ///  Occurs when the timer interval has elapsed and the timer is enabled.
         /// </summary>
@@ -77,6 +90,7 @@ namespace TetrisGame
             if (time % speed == 0)
                 move(Direction.Down);
         }
+
         /// <summary>
         /// Updates the time of the game.
         /// </summary>
@@ -90,6 +104,7 @@ namespace TetrisGame
                 this.Controls[3].Controls[0].Text = String.Format("{0:00}:{1:00}", minutes, seconds);
             }
         }
+
         /// <summary>
         /// Creates the next tetrimino that will fall
         /// </summary>
@@ -107,6 +122,7 @@ namespace TetrisGame
             nextTetrimino = Tetriminoes[random.Next(7)];
             this.Controls[2].Controls[0].BackgroundImage = nextTetrimino.tetriminoImage;
         }
+
         /// <summary>
         /// Moves the current tetrimino down, left or right
         /// </summary>
@@ -125,7 +141,6 @@ namespace TetrisGame
                         addTetriminos();
                         createTetrimino();
                     }
-
                 }
                 else
                 {
@@ -142,6 +157,7 @@ namespace TetrisGame
             }
             Invalidate();
         }
+
         /// <summary>
         /// Tries to rotate the falling tetrimino.
         /// </summary>
@@ -150,6 +166,7 @@ namespace TetrisGame
             currentTetrimino.tryRotate(board.immovableSquares);
             Invalidate();
         }
+
         /// <summary>
         /// Looks for full rows
         /// </summary>
@@ -157,12 +174,13 @@ namespace TetrisGame
         {
             int sum = 0;
             List<int> rowsForDeleting = new List<int>();
-
             foreach (Square s in currentTetrimino.s)
             {
                 int y = s.Y;
                 if (!rowsForDeleting.Contains(y))
+                {
                     rowsForDeleting.Add(y);
+                }
             }
             rowsForDeleting.Sort();
             foreach(int y in rowsForDeleting)
@@ -188,6 +206,7 @@ namespace TetrisGame
             }
             updateScore(sum);
         }
+
         /// <summary>
         /// Overriding the OnPaint method of the class System.Windows.Forms.
         /// </summary>
@@ -198,6 +217,7 @@ namespace TetrisGame
             board.Draw(new SolidBrush(board.backgroundColor), new Pen(Color.LightGray), e.Graphics);
             currentTetrimino.Draw(e.Graphics, board.Location);
         }
+
         /// <summary>
         /// Increases the score with the value of the parameter.
         /// </summary>
@@ -210,18 +230,18 @@ namespace TetrisGame
             if(n != 0 && (update/500) > 0)
             {
                 updateLevel();
-              
                 if(speed > 100)
                 {
                     this.speed -= 100; 
-                } else if(speed > 0)
+                } 
+                else if(speed > 0)
                 {
                     this.speed -= 10;
                 }
                 this.update -= 500;
-
             }
         }
+
         /// <summary>
         /// Increments the level of the game.
         /// </summary>
@@ -230,6 +250,7 @@ namespace TetrisGame
             level++;
             this.Controls[1].Text = level.ToString(); // change the level in the label
         }
+
         /// <summary>
         /// Starts the game.
         /// </summary>
@@ -252,6 +273,7 @@ namespace TetrisGame
             createTetrimino();
             Invalidate();
         }
+
         /// <summary>
         /// Continues the game.
         /// </summary>
@@ -261,6 +283,7 @@ namespace TetrisGame
             paused = false;
             timer.Start();
         }
+
         /// <summary>
         /// Pauses the game.
         /// </summary>
@@ -270,6 +293,7 @@ namespace TetrisGame
             paused = true;
             timer.Stop();
         }
+
         /// <summary>
         /// Ends the game.
         /// </summary>
@@ -281,22 +305,15 @@ namespace TetrisGame
             time = 0;
             updateTime();
             if (highScore < score)
+            {
                 highScore = score;
+            }
             HighScore dialog = new HighScore(highScore, score);
             DialogResult result = dialog.ShowDialog();
             if (result == DialogResult.OK)
+            {
                 startGame();
-        }
-
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // TetrisBox
-            // 
-            this.Name = "TetrisBox";
-            this.ResumeLayout(false);
-
+            }
         }
     }
 }

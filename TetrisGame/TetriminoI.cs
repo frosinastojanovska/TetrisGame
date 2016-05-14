@@ -26,6 +26,7 @@ namespace TetrisGame
             s[3].X = X;
             s[3].Y = Y - 1;
         }
+
         /// <summary>
         /// Rotates the tetrimino.
         /// </summary>
@@ -93,6 +94,7 @@ namespace TetrisGame
                 state = 1;
             }
         }
+
         /// <summary>
         /// Checks if it can rotate
         /// </summary>
@@ -108,8 +110,10 @@ namespace TetrisGame
             }
             t.state = this.state;
             t.rotate();
-            if(t.safe(immovableSquares))
+            if (t.safe(immovableSquares))
+            {
                 this.rotate();
+            }
         }
     }
 }

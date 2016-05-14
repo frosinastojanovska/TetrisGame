@@ -10,28 +10,15 @@ namespace TetrisGame
         public int X { get; set; }
         public int Y { get; set; }
         public Color color { get; set; }
-        public bool canMove { get; set; }
+        public static Color borderColor = Color.Gray;
+        
         /// <summary>
         /// Initializes a new instance of the Square class with the specific color.
         /// </summary>
         /// <param name="c"></param>
         public Square(Color c)
         {
-            canMove = true;
             color = c;
-        }
-        /// <summary>
-        /// Initializes a new instance of the Square class with the specific parameters.
-        /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <param name="c"></param>
-        public Square(int x, int y, Color c)
-        {
-            X = x;
-            Y = y;
-            color = c;
-            canMove = true;
         }
         
         /// <summary>
@@ -44,9 +31,10 @@ namespace TetrisGame
             if (Y >= 0)
             {
                 g.FillRectangle(new SolidBrush(color), location.X + X * size, location.Y + Y * size, size, size);
-                g.DrawRectangle(new Pen(Color.Gray, 2), location.X + X * size, location.Y + Y * size, size, size);
+                g.DrawRectangle(new Pen(borderColor, 2), location.X + X * size, location.Y + Y * size, size, size);
             }
         }
+
         /// <summary>
         /// Moves the square down.
         /// </summary>
@@ -54,6 +42,7 @@ namespace TetrisGame
         {
             Y++;
         }
+
         /// <summary>
         /// Moves the square left.
         /// </summary>
@@ -61,19 +50,13 @@ namespace TetrisGame
         {
             X--;
         }
+
         /// <summary>
         /// moves the square right.
         /// </summary>
         public void moveRight()
         {
             X++;
-        }
-        /// <summary>
-        /// Moves the square up.
-        /// </summary>
-        public void moveUp()
-        {
-            Y--;
         }
     }
 }

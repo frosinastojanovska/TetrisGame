@@ -15,6 +15,7 @@ namespace TetrisGame
             this.lbHighScore.Text = HighScore.ToString();
             this.lbScore.Text = Score.ToString();
         }
+
         /// <summary>
         /// Sets the DialogResult and closes the form.
         /// </summary>

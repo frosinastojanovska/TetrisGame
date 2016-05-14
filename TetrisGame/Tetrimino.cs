@@ -12,7 +12,6 @@ namespace TetrisGame
         public Square[] s;  // the squares of the tetrimino
         public int X { get; set; }  // x coordinate of the position
         public int Y { get; set; }  // y coordinate of the position
-        public Color color { get; set; }  // the color of the tetrimino
         public int state { get; set; }  // current state of the tetrimino
         public Image tetriminoImage { get; set; }  // the image of the tetrimino
 
@@ -25,10 +24,8 @@ namespace TetrisGame
         {
             X = 3;
             Y = 0;
-            color = c;
             state = 1;
             tetriminoImage = image;
-
             s = new Square[4];
             for(int i=0; i<4; i++)
             {
@@ -48,6 +45,7 @@ namespace TetrisGame
                 s[i].Draw(g, p);
             }
         }
+
         /// <summary>
         /// Checks if the Tetrimino is out of the top border of the board 
         /// </summary>
@@ -75,6 +73,7 @@ namespace TetrisGame
                 }
             }
         }
+
         /// <summary>
         /// Moves the tetrimino left.
         /// </summary>
@@ -88,6 +87,7 @@ namespace TetrisGame
                 }
             }
         }
+
         /// <summary>
         /// Moves the tetrimino right.
         /// </summary>
@@ -120,6 +120,7 @@ namespace TetrisGame
             }
             return true;
         }
+
         /// <summary>
         /// Safe method - define whether the tetrimino can move right.
         /// </summary>
@@ -139,6 +140,7 @@ namespace TetrisGame
             }
             return true;
         }
+
         /// <summary>
         /// Safe method - define whether the tetrimino can move down.
         /// </summary>
@@ -185,11 +187,10 @@ namespace TetrisGame
         /// Method rotate: rotates the tetrimino.
         /// </summary>
         public abstract void rotate();
+
         /// <summary>
         /// Method tryRotate: tries to rotate the tetrimino clockwise if possible.
         /// </summary>
         public abstract void tryRotate(List<Square[]> immovableSquares);
-    }
-
-
+    }  
 }
