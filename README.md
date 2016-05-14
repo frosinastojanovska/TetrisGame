@@ -38,7 +38,7 @@ Implementation of the game Tetris with C# in Windows Forms
 
 - <img src="TetrisGame/Resources/buttonHelp.png" alt="Help" width="25px" height"25px"/> **Help** -> прикажување помош околу правилата и начинот на игра.
 
-- <img src="TetrisGame/Resources/buttonPause.png" alt="Pause" width="25px" height"25px"/> <img src="TetrisGame/Resources/buttonPlay.png" alt="Play" width="25px" height"25px"/> **Pause/Play** -> паузирање/продожување со играта.
+- <img src="TetrisGame/Resources/buttonPause.png" alt="Pause" width="25px" height"25px"/> <img src="TetrisGame/Resources/buttonPlay.png" alt="Play" width="25px" height"25px"/> **Pause/Play** -> паузирање/продолжување со играта.
 
 ![Поглед при играње](Images/PlayGameView.jpg)
 
