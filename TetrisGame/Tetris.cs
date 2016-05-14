@@ -10,8 +10,9 @@ namespace TetrisGame
     {
         private TetrisBox box;  // control for the game
         private DialogBox dialog;  // dialog box
-        private static readonly System.Media.SoundPlayer AUDIO = new System.Media.SoundPlayer(TetrisGame.Properties.Resources.tetriminoMove);
-        private static bool sound;
+        private static readonly System.Media.SoundPlayer AUDIO = new System.Media.SoundPlayer(TetrisGame.Properties.Resources.moveTetrimino);
+        public static readonly System.Media.SoundPlayer AUDIO2 = new System.Media.SoundPlayer(TetrisGame.Properties.Resources.clearLines);
+        public static bool sound;
 
         /// <summary>
         /// Initializes a new instance of the Tetris class.
@@ -243,6 +244,18 @@ namespace TetrisGame
             {
                 AUDIO.Stop();
                 AUDIO.Play();
+            }
+        }
+
+        /// <summary>
+        /// Plays sound for clearing lines.
+        /// </summary>
+        public static void playSound2()
+        {
+            if (sound)
+            {
+                AUDIO2.Stop();
+                AUDIO2.Play();
             }
         }
 

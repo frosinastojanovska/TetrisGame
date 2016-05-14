@@ -204,6 +204,8 @@ namespace TetrisGame
                     board.immovableSquares.Insert(0, new Square[board.Columns]);
                 }
             }
+            if (sum > 0)
+                Tetris.playSound2();
             updateScore(sum);
         }
 
