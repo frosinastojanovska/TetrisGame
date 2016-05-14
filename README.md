@@ -30,15 +30,15 @@ Implementation of the game Tetris with C# in Windows Forms
 
 - <img src="TetrisGame/Resources/buttonQuit.png" alt="Quit/Exit" width="25px" height"25px"/> **Quit/Exit** -> исклучување на играта.
 
-- ![New Game](TetrisGame/Resources/buttonNewGame.png) **New Game** -> започнување нова игра.
+- <img src="TetrisGame/Resources/buttonNewGame.png" alt="New Game" width="25px" height"25px"/> **New Game** -> започнување нова игра.
 
-- ![Sound Off](TetrisGame/Resources/soundOffButton.png) ![Sound On](TetrisGame/Resources/soundOnButton.png) **Sound Off/On** -> вклучување/исклучување на звуците.
+- <img src="TetrisGame/Resources/soundOffButton.png" alt="Sound Off" width="25px" height"25px"/> <img src="TetrisGame/Resources/soundOnButton.png" alt="Sound On" width="25px" height"25px"/> **Sound Off/On** -> вклучување/исклучување на звуците.
 
-- ![Main menu](TetrisGame/Resources/buttonMainMenu.png) **Main menu** -> префрлување на почетниот поглед.
+- <img src="TetrisGame/Resources/buttonMainMenu.png" alt="Main menu" width="25px" height"25px"/> **Main menu** -> префрлување на почетниот поглед.
 
-- ![Help](TetrisGame/Resources/buttonHelp.png) **Help** -> прикажување помош околу правилата и начинот на игра.
+- <img src="TetrisGame/Resources/buttonHelp.png" alt="Help" width="25px" height"25px"/> **Help** -> прикажување помош околу правилата и начинот на игра.
 
-- ![Pause](TetrisGame/Resources/buttonPause.png) ![Play](TetrisGame/Resources/buttonPlay.png) **Pause/Play** -> паузирање/продожување со играта.
+- <img src="TetrisGame/Resources/buttonPause.png" alt="Pause" width="25px" height"25px"/> <img src="TetrisGame/Resources/buttonPlay.png" alt="Play" width="25px" height"25px"/> **Pause/Play** -> паузирање/продожување со играта.
 
 ![Поглед при играње](Images/PlayGameView.jpg)
 
