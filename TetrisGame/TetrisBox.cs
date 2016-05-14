@@ -147,8 +147,7 @@ namespace TetrisGame
         /// </summary>
         public void rotate()
         {
-            if (currentTetrimino.tryRotate(board.immovableSquares))
-                currentTetrimino.rotate();
+            currentTetrimino.tryRotate(board.immovableSquares);
             Invalidate();
         }
         /// <summary>

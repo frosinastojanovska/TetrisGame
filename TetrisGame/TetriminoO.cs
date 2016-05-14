@@ -33,10 +33,9 @@ namespace TetrisGame
             //this tetrimino does not rotate
         }
 
-        public override bool tryRotate(List<Square[]> immovableSquares)
+        public override void tryRotate(List<Square[]> immovableSquares)
         {
             //this tetrimino does not rotate
-            return false;
         }
     }
 }

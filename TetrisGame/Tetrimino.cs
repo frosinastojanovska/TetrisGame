@@ -182,10 +182,13 @@ namespace TetrisGame
         }
 
         /// <summary>
-        /// Method rotate: rotates the tetrimino clockwise if possible.
+        /// Method rotate: rotates the tetrimino.
         /// </summary>
         public abstract void rotate();
-        public abstract bool tryRotate(List<Square[]> immovableSquares);
+        /// <summary>
+        /// Method tryRotate: tries to rotate the tetrimino clockwise if possible.
+        /// </summary>
+        public abstract void tryRotate(List<Square[]> immovableSquares);
     }
 
 

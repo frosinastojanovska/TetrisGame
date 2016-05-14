@@ -98,7 +98,7 @@ namespace TetrisGame
         /// </summary>
         /// <param name="immovableSquares"></param>
         /// <returns></returns>
-        public override bool tryRotate(List<Square[]> immovableSquares)
+        public override void tryRotate(List<Square[]> immovableSquares)
         {
             Tetrimino t = new TetriminoI();
             for(int i=0; i<4; i++)
@@ -108,7 +108,8 @@ namespace TetrisGame
             }
             t.state = this.state;
             t.rotate();
-            return t.safe(immovableSquares);
+            if(t.safe(immovableSquares))
+                this.rotate();
         }
     }
 }
