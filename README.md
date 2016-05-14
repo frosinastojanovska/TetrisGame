@@ -28,7 +28,7 @@ Implementation of the game Tetris with C# in Windows Forms
 ###2.1. Playing Game
 По кликнување на копчето **New Game** се отвара нов поглед кој овозможува играње на играта. Тука се одвива целата игра. Во левиот дел се наоѓа полето за игра. Во десниот дел се прикажуваат следното тетримино, времето кое изминало од почетокот на играта, нивото како и бројот на освоени поени. Во овој поглед има и копчиња кои овозможуваат контрола на играта:
 
-- ![Quit/Exit](TetrisGame/Resources/buttonQuit.png =25x25) **Quit/Exit** -> исклучување на играта.
+- <img src="TetrisGame/Resources/buttonQuit.png" alt="Quit/Exit" width="25px" height"25px"/> **Quit/Exit** -> исклучување на играта.
 
 - ![New Game](TetrisGame/Resources/buttonNewGame.png) **New Game** -> започнување нова игра.
 
