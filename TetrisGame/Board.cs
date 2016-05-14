@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 
 namespace TetrisGame
@@ -37,32 +36,10 @@ namespace TetrisGame
                 immovableSquares.Add(col);
             }
         }
-        /*
         /// <summary>
-        /// Sets currentTetrimino to the previously nextTetrimino. Sets the nextTetrimino to a random new Tetrimino.
-        /// Draws the currentTetrimino.
+        /// Method for adding squares of the tetrimino to the board
         /// </summary>
         /// <param name="t"></param>
-
-        public void createTetrimino(Tetrimino t, Graphics g)
-        {
-            //checking if we can add a new tetrimino
-            //i.e. is the whole board filled up
-            currentTetrimino = nextTetrimino;
-            Random random = new Random();
-            int tetr = random.Next(7);
-            Tetriminoes.TryGetValue(tetr, out nextTetrimino);
-
-            if (currentTetrimino.canCreate())
-            {   //drawing
-                currentTetrimino.Draw(g);
-            } else
-            {
-                //Game over
-            }
-  
-        }*/
-
         public void addSquares(Tetrimino t)
         {
             foreach(Square s in t.s)
@@ -96,7 +73,7 @@ namespace TetrisGame
                 {
                     if (square[i] != null)
                     {
-                        if (square[i].Y != j) //promena na redicite pri brishenje
+                        if (square[i].Y != j) // update of the row number after deleting rows
                         {
                             square[i].Y = j;
                         }

@@ -1,28 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Drawing;
 
 namespace TetrisGame
 {
 
     /// <summary>
-    /// Class TetriminoO: represents the square shaped Tetrimino, implements all the abstract methods from Tetrimino class
+    /// A class that represents the tetrimino O in the tetris game.
     /// </summary>
     class TetriminoO : Tetrimino
     {
+        /// <summary>
+        ///  Initializes a new instance of the TetriminoO class.
+        /// </summary>
         public TetriminoO() : base(Color.Yellow, TetrisGame.Properties.Resources.TetriminoO)
         {
+            s[0].X = X;
+            s[0].Y = Y - 2;
+
             s[1].X = X + 1;
-            s[1].Y = Y;
+            s[1].Y = Y - 2;
 
             s[2].X = X;
-            s[2].Y = Y + 1;
+            s[2].Y = Y - 1;
 
             s[3].X = X + 1;
-            s[3].Y = Y + 1;
+            s[3].Y = Y - 1;
         }
         
         public override void rotate(List<Square[]> boardSquares)

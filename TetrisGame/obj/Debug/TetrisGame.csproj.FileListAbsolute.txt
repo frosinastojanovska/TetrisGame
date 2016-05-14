@@ -97,3 +97,12 @@ E:\Life after Hogwarts\Level 2. part 2\VP\Tetris2\TetrisGame\TetrisGame\obj\Debu
 C:\Users\Frosina\Documents\VPproject\TetrisGame\TetrisGame\bin\Debug\TetrisGame.exe.config
 C:\Users\Frosina\Documents\VPproject\TetrisGame\TetrisGame\obj\Debug\TetrisGame.exe
 C:\Users\Frosina\Documents\VPproject\TetrisGame\TetrisGame\obj\Debug\TetrisGame.pdb
+C:\Users\Frosina\Documents\VPproject\TetrisGame\TetrisGame\bin\Debug\TetrisGame.exe
+C:\Users\Frosina\Documents\VPproject\TetrisGame\TetrisGame\bin\Debug\TetrisGame.pdb
+C:\Users\Frosina\Documents\VPproject\TetrisGame\TetrisGame\obj\Debug\TetrisGame.csprojResolveAssemblyReference.cache
+C:\Users\Frosina\Documents\VPproject\TetrisGame\TetrisGame\obj\Debug\TetrisGame.HighScore.resources
+C:\Users\Frosina\Documents\VPproject\TetrisGame\TetrisGame\obj\Debug\TetrisGame.DialogBox.resources
+C:\Users\Frosina\Documents\VPproject\TetrisGame\TetrisGame\obj\Debug\TetrisGame.Properties.Resources.resources
+C:\Users\Frosina\Documents\VPproject\TetrisGame\TetrisGame\obj\Debug\TetrisGame.Tetris.resources
+C:\Users\Frosina\Documents\VPproject\TetrisGame\TetrisGame\obj\Debug\TetrisGame.TetrisBox.resources
+C:\Users\Frosina\Documents\VPproject\TetrisGame\TetrisGame\obj\Debug\TetrisGame.csproj.GenerateResource.Cache

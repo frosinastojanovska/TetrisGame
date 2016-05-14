@@ -106,8 +106,6 @@ namespace TetrisGame
             }
             nextTetrimino = Tetriminoes[random.Next(7)];
             this.Controls[2].Controls[0].BackgroundImage = nextTetrimino.tetriminoImage;
-            //this.Controls[2].Controls[0].Width = nextTetrimino.tetriminoImage.Width;
-            //this.Controls[2].Controls[0].Height = nextTetrimino.tetriminoImage.Height;
         }
         /// <summary>
         /// Moves the current tetrimino down, left or right
@@ -389,7 +387,10 @@ namespace TetrisGame
 
         public void rotate()
         {
-            safeToRotate(currentTetrimino);
+            //safeToRotate(currentTetrimino);
+            currentTetrimino.rotate(board.immovableSquares);
+            if (!currentTetrimino.safe(board.immovableSquares))
+                rotate3(currentTetrimino);
             Invalidate();
         }
     }

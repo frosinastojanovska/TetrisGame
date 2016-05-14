@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
 namespace TetrisGame
 {
+    /// <summary>
+    /// A class that represents the squares in the tetris game.
     public class Square
     {
         public readonly float size = 20;
@@ -14,13 +11,21 @@ namespace TetrisGame
         public int Y { get; set; }
         public Color color { get; set; }
         public bool canMove { get; set; }
-
+        /// <summary>
+        /// Initializes a new instance of the Square class with the specific color.
+        /// </summary>
+        /// <param name="c"></param>
         public Square(Color c)
         {
             canMove = true;
             color = c;
         }
-
+        /// <summary>
+        /// Initializes a new instance of the Square class with the specific parameters.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="c"></param>
         public Square(int x, int y, Color c)
         {
             X = x;
@@ -28,17 +33,12 @@ namespace TetrisGame
             color = c;
             canMove = true;
         }
-
+        
         /// <summary>
-        /// Checks whether a square is taken, if it is it is unsafe and a now tetrimino cannot occupy it.
+        ///  Draws the square.
         /// </summary>
-        /// <returns></returns>
-        public bool safe(List<Square[]> boardSquares)
-        {
-            if (boardSquares.ElementAt(0)[4] == null) return true;
-            return false;
-        }
-
+        /// <param name="g"></param>
+        /// <param name="location"></param>
         public void Draw(Graphics g, Point location)
         {
             if (Y >= 0)
@@ -47,22 +47,30 @@ namespace TetrisGame
                 g.DrawRectangle(new Pen(Color.Gray, 2), location.X + X * size, location.Y + Y * size, size, size);
             }
         }
-
+        /// <summary>
+        /// Moves the square down.
+        /// </summary>
         public void moveDown()
         {
             Y++;
         }
-
+        /// <summary>
+        /// Moves the square left.
+        /// </summary>
         public void moveLeft()
         {
             X--;
         }
-
+        /// <summary>
+        /// moves the square right.
+        /// </summary>
         public void moveRight()
         {
             X++;
         }
-
+        /// <summary>
+        /// Moves the square up.
+        /// </summary>
         public void moveUp()
         {
             Y--;

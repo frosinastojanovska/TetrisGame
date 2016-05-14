@@ -31,10 +31,6 @@ namespace TetrisGame
             box.Leave += box_Leave;
         }
 
-        private void box_Leave(object sender, EventArgs e)
-        {
-            this.ActiveControl = null;
-        }
         /// <summary>
         /// Sets tooltips to buttons.
         /// </summary>
@@ -235,12 +231,16 @@ namespace TetrisGame
                 AUDIO.Play();
             }
         }
-
+        /// <summary>
+        /// Catch the event of pressing the arrow keys and move the tetrimino in the game
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Tetris_KeyDown(object sender, KeyEventArgs e)
         {
             if (box.playing)
             {
-                if (e.KeyCode == Keys.Right)
+                if (e.KeyCode == Keys.A)
                 {
                     playSound();
                     box.move(Direction.Right);
@@ -264,6 +264,11 @@ namespace TetrisGame
         }
 
         private void Tetris_Leave(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
+        }
+        
+        private void box_Leave(object sender, EventArgs e)
         {
             this.ActiveControl = null;
         }

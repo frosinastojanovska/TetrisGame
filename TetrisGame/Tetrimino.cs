@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TetrisGame
 {
@@ -12,17 +9,22 @@ namespace TetrisGame
     /// </summary>
     public abstract class Tetrimino
     {
-        public Square[] s;
-        public int X { get; set; }
-        public int Y { get; set; }
-        public Color color { get; set; }
-        public int state { get; set; }
-        public Image tetriminoImage { get; set; }
+        public Square[] s;  // the squares of the tetrimino
+        public int X { get; set; }  // x coordinate of the position
+        public int Y { get; set; }  // y coordinate of the position
+        public Color color { get; set; }  // the color of the tetrimino
+        public int state { get; set; }  // current state of the tetrimino
+        public Image tetriminoImage { get; set; }  // the image of the tetrimino
 
+        /// <summary>
+        /// Helps in creating a new instance of a class that inherits from Tetrimino class.
+        /// </summary>
+        /// <param name="c"></param>
+        /// <param name="image"></param>
         public Tetrimino(Color c, Image image)
         {
             X = 3;
-            Y = -2;
+            Y = 0;
             color = c;
             state = 1;
             tetriminoImage = image;
@@ -32,9 +34,6 @@ namespace TetrisGame
             {
                 s[i] = new Square(c);
             }
-
-            s[0].X = X;
-            s[0].Y = Y;
         }
 
         public Tetrimino(Tetrimino t)
@@ -57,7 +56,11 @@ namespace TetrisGame
 
         }
 
-
+        /// <summary>
+        /// Draws the tetrimino
+        /// </summary>
+        /// <param name="g"></param>
+        /// <param name="p"></param>
         public void Draw(Graphics g, Point p)
         {
            for(int i=0; i<4; i++)
@@ -66,7 +69,7 @@ namespace TetrisGame
             }
         }
         /// <summary>
-        /// Checks if the Tetrimino is out of the board 
+        /// Checks if the Tetrimino is out of the top border of the board 
         /// </summary>
         /// <returns></returns>
         public bool isOut()
@@ -80,7 +83,7 @@ namespace TetrisGame
         }
 
         /// <summary>
-        /// Move methods: moves the tetrimino down, left or right accordingly.
+        /// Moves the tetrimino down.
         /// </summary>
         public void moveDown(List<Square[]> boardSquares)
         {
@@ -92,7 +95,9 @@ namespace TetrisGame
                 }
             }
         }
-
+        /// <summary>
+        /// Moves the tetrimino left.
+        /// </summary>
         public void moveLeft(List<Square[]> boardSquares)
         {
             if (safeLeft(boardSquares) == true)
@@ -103,7 +108,9 @@ namespace TetrisGame
                 }
             }
         }
-
+        /// <summary>
+        /// Moves the tetrimino right.
+        /// </summary>
         public void moveRight(List<Square[]> boardSquares)
         {
             if (safeRight(boardSquares) == true)
@@ -127,7 +134,7 @@ namespace TetrisGame
         }
 
         /// <summary>
-        /// Safe methods: define whether the tetrimino can move left, right or down accordingly.
+        /// Safe method - define whether the tetrimino can move left.
         /// </summary>
         public bool safeLeft(List<Square[]> boardSquares)
         {
@@ -144,6 +151,9 @@ namespace TetrisGame
             }
             return true;
         }
+        /// <summary>
+        /// Safe method - define whether the tetrimino can move right.
+        /// </summary>
         public bool safeRight(List<Square[]> boardSquares)
         {
             for (int i = 0; i < 4; i++)
@@ -160,6 +170,9 @@ namespace TetrisGame
             }
             return true;
         }
+        /// <summary>
+        /// Safe method - define whether the tetrimino can move down.
+        /// </summary>
         public bool safeDown(List<Square[]> boardSquares)
         {
             for (int i = 0; i < 4; i++)
@@ -196,25 +209,23 @@ namespace TetrisGame
         }
 
         /// <summary>
-        /// Checks if there is enough space at the top of the board to add the new tetrimino.
-        /// </summary>
-        /// <returns></returns>
-        public bool canCreate(List<Square[]> immovableSquares)
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                if (!s[i].safe(immovableSquares)) return false;
-            }
-            return true;
-        }
-
-
-        /// <summary>
-        /// Method safe: uses the three safe-methods to define whether the tetrimino can be moved or rotated.
+        /// Checks if the tetrimino is inside the board limits and doesn't innterupt some immovable square
         /// </summary>
         public bool safe(List<Square[]> boardSquares)
         {
-            return safeLeft(boardSquares) && safeRight(boardSquares) && safeDown(boardSquares);
+            //return safeLeft(boardSquares) && safeRight(boardSquares) && safeDown(boardSquares);
+            for (int i = 0; i < 4; i++)
+            {
+                if (s[i].X < 0 || s[i].X >= boardSquares[0].Length || s[i].Y >= boardSquares.Count())
+                {
+                    return false;
+                }
+                if (s[i].Y >=0 && boardSquares[s[i].Y][s[i].X] != null)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
         
         public bool safeToRotateLeft(List<Square[]> boardSquares)
@@ -222,7 +233,7 @@ namespace TetrisGame
 
             for (int i = 0; i < 4; i++)
             {
-                if (s[i].X < 0 || s[i].X > 9)
+                if (s[i].X < 0 || s[i].X >= boardSquares[0].Length)
                 {
                     return false;
                 }
