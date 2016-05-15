@@ -87,7 +87,7 @@ Tetrimino е класа која претставува едно тетрими�
 - Draw(Graphics g, Point p) - го користи методот Draw од класата Square за да ги исцрта квадратчињата кои ги содржи тетриминото и преку тоа самото тетримино.
 
 ```C#
-		public void Draw(Graphics g, Point p)
+	public void Draw(Graphics g, Point p)
         {
            for(int i=0; i<4; i++)
             {
@@ -99,7 +99,7 @@ Tetrimino е класа која претставува едно тетрими�
 - isOut() - проверува дали ново креираното тетримино се појавило на таблата или сèуште се наоѓа во просторот над првиот ред, каде што не е видливо за користникот.
 
 ```C#	
-	 	 public bool isOut()
+	 public bool isOut()
         {
             foreach(Square square in s)
             {
@@ -114,7 +114,7 @@ Tetrimino е класа која претставува едно тетрими�
 Аналогно на ова се имплементирани и методите moveLeft(List<Square[]> boardSquares) и moveRight(List<Square[]> boardSquares).
 
 ```C#
-		 public void moveDown(List<Square[]> boardSquares)
+	public void moveDown(List<Square[]> boardSquares)
         {
             if (safeDown(boardSquares) == true)
             {
@@ -125,7 +125,7 @@ Tetrimino е класа која претставува едно тетрими�
             }
         }
         
-        	public void moveLeft(List<Square[]> boardSquares)
+        public void moveLeft(List<Square[]> boardSquares)
         {
             if (safeLeft(boardSquares) == true)
             {
@@ -136,7 +136,7 @@ Tetrimino е класа која претставува едно тетрими�
             }
         }
 
-        	public void moveRight(List<Square[]> boardSquares)
+        public void moveRight(List<Square[]> boardSquares)
         {
             if (safeRight(boardSquares) == true)
             {
@@ -151,7 +151,7 @@ Tetrimino е класа која претставува едно тетрими�
 - safeLeft(List<Square[]> boardSquares) - проверува дали секое од квадратчињата од кои е составено тетриминото се наоѓаат на таблата и дополнително дали ако целото тетримино се помести на едно место за лево состојбата ќе биде безбедна, т.е. дали сèуште целото тетримино ќе биде на таблата. Аналогно на ова се дефинирани и safeDown(List<Square[]> boardSquares) и safeRight(List<Square[]> boardSquares).
 
 ```C#
-		 public bool safeLeft(List<Square[]> boardSquares)
+	public bool safeLeft(List<Square[]> boardSquares)
         {
             for (int i = 0; i < 4; i++)
             {
@@ -167,7 +167,7 @@ Tetrimino е класа која претставува едно тетрими�
             return true;
         }
 
-        	public bool safeRight(List<Square[]> boardSquares)
+        public bool safeRight(List<Square[]> boardSquares)
         {
             for (int i = 0; i < 4; i++)
             {
@@ -184,7 +184,7 @@ Tetrimino е класа која претставува едно тетрими�
             return true;
         }
 
-        	public bool safeDown(List<Square[]> boardSquares)
+        public bool safeDown(List<Square[]> boardSquares)
         {
             for (int i = 0; i < 4; i++)
             {
@@ -209,7 +209,7 @@ Tetrimino е класа која претставува едно тетрими�
 - safe(List<Square[]> boardSquares) - проверува дали тетриминото е во границите на таблата, т.е. дали состојбата во која сме моментално е безбедна*.
 
 ```C#
-		public bool safe(List<Square[]> boardSquares)
+	public bool safe(List<Square[]> boardSquares)
         {
             for (int i = 0; i < 4; i++)
             {
