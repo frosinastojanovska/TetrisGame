@@ -5,7 +5,8 @@ Implementation of the game Tetris in C#
 
 
 
-#Table of Contents
+####Table of Contents
+
  1. [Опис на апликацијата](#introduction)
  2. [Претставување на функционалностите](#functionalities)
  
