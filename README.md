@@ -1,7 +1,7 @@
 ﻿TetrisGame
 ===================
 
-[Македонски](#macedonian) | [English] (#english) 
+[Македонски](#macedonian) | [English](#english) 
 
 
 Implementation of the game Tetris in C#
@@ -349,7 +349,7 @@ There are 7 concrete classes which inherit from the Tetrimino class: **Tetrimino
 
 ![Почетен изглед на апликацијата](Images/InitialView.jpg)
 
-###2.1. <a name="playingM"></a>Playing Game
+### 2.1. <a name="playingM"></a>Playing Game
 По кликнување на копчето **New Game** се отвара нов поглед кој овозможува играње на играта. Тука се одвива целата игра. Во левиот дел се наоѓа полето за игра. Во десниот дел се прикажуваат следното тетримино, времето кое изминало од почетокот на играта, нивото како и бројот на освоени поени. Во овој поглед има и копчиња кои овозможуваат контрола на играта:
 
 - <img src="TetrisGame/Resources/buttonQuit.png" alt="Quit/Exit" width="25px" height"25px"/> **Quit/Exit** ⇒ исклучување на играта.
